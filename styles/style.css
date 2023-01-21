@@ -16,11 +16,32 @@ html {
 }
 .LinkButton::after {
   position: absolute;
-  content: "";
+  content: '';
   width: calc(100% - 7px);
   height: calc(100% - 7px);
   border: #fff 2px solid;
   border-radius: 8px;
+}
+.sub_title {
+  position: relative;
+  font-size: 3rem;
+  padding: 8px 0 8px 10px;
+  text-align: center;
+  width: 33rem;
+  font-weight: bold;
+  background-color: #fff;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.542);
+  margin: 10% auto;
+  transform: rotate(-5deg);
+}
+.sub_title::before {
+  content: '';
+  position: absolute;
+  width: 10%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: #ffb800;
 }
 
 .login_flex {
@@ -85,7 +106,7 @@ html {
 }
 .login_flex .login_btn::after {
   position: absolute;
-  content: "";
+  content: '';
   width: calc(100% - 7px);
   height: calc(100% - 7px);
   border: #fff 2px solid;
@@ -103,4 +124,34 @@ html {
   display: flex;
   justify-content: space-around;
   width: 50%;
-}/*# sourceMappingURL=style.css.map */
+}
+.news_lists {
+  position: relative;
+  font-size: 1.5rem;
+  border-radius: 20px;
+  width: 80%;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding: 3% 5% 5%;
+}
+.news_lists::after {
+  position: absolute;
+  content: '';
+  top: 3px;
+  left: 3px;
+  border-radius: 20px;
+  width: calc(100% - 6px);
+  height: calc(100% - 6px);
+  border: #ffb800 3px solid;
+}
+.news_lists dl {
+  width: 100%;
+  padding: 3% 0;
+  display: flex;
+  border-bottom: #ffb800 1px solid;
+}
+.news_lists dl dt {
+  margin: 0 10% 0 3%;
+} /*# sourceMappingURL=style.css.map */
