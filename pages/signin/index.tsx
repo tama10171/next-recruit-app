@@ -65,7 +65,7 @@ export const SignIn = () => {
   }
 
   return (
-    <PageLayout>
+    <PageLayout hasHeader={false}>
       <div className="login_flex">
         <Box className="login_box" bg="white">
           <HStack className="login_pare">

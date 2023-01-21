@@ -1,20 +1,19 @@
 import { PageLayout } from '@/components/layouts/PageLayout'
-import { background, Box, Button, Center, color, FormControl, FormLabel, HStack, Input, Text } from '@chakra-ui/react'
-import Link from "next/link";
-import LinkButton from "@/components/LinkButton"
+import { Center, SimpleGrid } from '@chakra-ui/react'
+import { LinkButton } from '@/components/pages/main/LinkButton'
 
-export default function MainPage() {
+const MainPage = () => {
   return (
-    
-    <>
-        <PageLayout>
-            <FormControl isRequired width={'100vw'}>
-                <LinkButton info="活動登録" />
-                <LinkButton info="活動一覧" />
-                <LinkButton info="グッドJOB" />
-                <LinkButton info="企業検索" />
-            </FormControl>
-        </PageLayout>
-    </>
+    <PageLayout>
+      <Center h={'calc(100vh - 60px)'}>
+        <SimpleGrid columns={2} spacing={'2px'} w="50%" m={'0 auto'}>
+          <LinkButton info="活動登録" href={'/main'} />
+          <LinkButton info="活動一覧" href={'/'} />
+          <LinkButton info="グッドJOB" href={'/'} />
+          <LinkButton info="企業検索" href={'/'} />
+        </SimpleGrid>
+      </Center>
+    </PageLayout>
   )
 }
+export default MainPage
