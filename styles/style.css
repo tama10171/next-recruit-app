@@ -1,5 +1,6 @@
 html {
   font-size: 62.5%;
+  background: #ffe7a9;
 }
 
 .flex {
@@ -16,12 +17,13 @@ html {
 }
 .LinkButton::after {
   position: absolute;
-  content: '';
+  content: "";
   width: calc(100% - 7px);
   height: calc(100% - 7px);
   border: #fff 2px solid;
   border-radius: 8px;
 }
+
 .sub_title {
   position: relative;
   font-size: 3rem;
@@ -35,7 +37,7 @@ html {
   transform: rotate(-5deg);
 }
 .sub_title::before {
-  content: '';
+  content: "";
   position: absolute;
   width: 10%;
   height: 100%;
@@ -106,7 +108,7 @@ html {
 }
 .login_flex .login_btn::after {
   position: absolute;
-  content: '';
+  content: "";
   width: calc(100% - 7px);
   height: calc(100% - 7px);
   border: #fff 2px solid;
@@ -125,6 +127,7 @@ html {
   justify-content: space-around;
   width: 50%;
 }
+
 .news_lists {
   position: relative;
   font-size: 1.5rem;
@@ -138,20 +141,20 @@ html {
 }
 .news_lists::after {
   position: absolute;
-  content: '';
+  content: "";
   top: 3px;
   left: 3px;
   border-radius: 20px;
   width: calc(100% - 6px);
   height: calc(100% - 6px);
-  border: #ffb800 3px solid;
+  border: #FFB800 3px solid;
 }
 .news_lists dl {
   width: 100%;
   padding: 3% 0;
   display: flex;
-  border-bottom: #ffb800 1px solid;
+  border-bottom: #FFB800 1px solid;
 }
 .news_lists dl dt {
   margin: 0 10% 0 3%;
-} /*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */
