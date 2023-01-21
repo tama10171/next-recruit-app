@@ -10,13 +10,13 @@ export const SignIn = () => {
         <HStack className="login_pare">
           <Text className='login_form'>学籍番号</Text>
           <FormControl  isRequired width={'70%'}>
-            <Input h={"30px"} bgColor={"#FFFAE8"} border={"#FFB800 1px solid"}/>
+            <Input h={"30px"} bgColor={"#FFFAE8"} border={"#FFB800 1px solid"} fontSize={"1.6rem"}/>
           </FormControl>
         </HStack>
         <HStack className="login_pare">
           <Text className='login_form'>パスワード</Text>
           <FormControl isRequired width={'70%'}>
-            <Input h={"30px"} bgColor={"#FFFAE8"} border={"#FFB800 1px solid"}/>
+            <Input h={"30px"} bgColor={"#FFFAE8"} border={"#FFB800 1px solid"} fontSize={"1.6rem"}/>
           </FormControl>
         </HStack>
       </Box>
