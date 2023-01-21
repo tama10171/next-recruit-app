@@ -10,7 +10,7 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <ChakraProvider>
       <Component {...pageProps} />
-      <Button onClick={onSignOut}>サインアウト</Button>
+      {/* <Button onClick={onSignOut}>サインアウト</Button> */}
     </ChakraProvider>
   )
 }

@@ -10,7 +10,7 @@ export const PageLayout = (props: PageLayoutProps) => {
   const { children, hasHeader = true } = props
 
   return (
-    <Box bg={'#FFE7A9'} minHeight={"100vh"} height="auto" width={'100vw'}>
+    <Box bg={'#FFE7A9'} minHeight={'100vh'} height="auto" width={'100vw'}>
       {hasHeader && <Header />}
       {children}
     </Box>

@@ -18,10 +18,5 @@ export default function Home() {
     })
   }, [])
 
-  return (
-    <>
-      {console.log(session)}
-      {!session ? <SignIn /> : <Account />}
-    </>
-  )
+  return <>{!session ? <SignIn /> : <Account />}</>
 }
