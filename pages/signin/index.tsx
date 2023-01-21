@@ -1,7 +1,17 @@
 import { PageLayout } from '@/components/layouts/PageLayout'
 import { supabase } from '@/libs/supabaseClient'
 
-import { AlertDialogBody, Box, Button, Center, FormControl, FormLabel, HStack, Input, Text } from '@chakra-ui/react'
+import {
+  AlertDialogBody,
+  Box,
+  Button,
+  Center,
+  FormControl,
+  FormLabel,
+  HStack,
+  Input,
+  Text,
+} from '@chakra-ui/react'
 import { useRouter } from 'next/router'
 import { useState } from 'react'
 
@@ -15,29 +25,39 @@ export const SignIn = () => {
       email: email,
       password: password,
     })
-    if (error)console.log(error)
+    if (error) console.log(error)
     router.push('/')
   }
 
   return (
     <PageLayout>
-      <Box width={'1268px'} bg="white" padding={'50px'}>
-        <HStack>
-          <Text>学籍番号</Text>
-          <FormControl isRequired width={'704px'}>
-            <Input placeholder="First name" onChange={(e) => setEmail(e.target.value)} />
-          </FormControl>
-        </HStack>
-        <HStack>
-          <Text>パスワード</Text>
-          <FormControl isRequired width={'704px'}>
-            <Input placeholder="First name" onChange={(e) => setPassword(e.target.value)} />
-          </FormControl>
-        </HStack>
-      </Box>
-      <Button colorScheme="blue" onClick={onsubmit}>
-        Button
-      </Button>
+      <div className="login_flex">
+        <Box className="login_box" bg="white">
+          <HStack className="login_pare">
+            <Text className="login_form">学籍番号</Text>
+            <FormControl isRequired width={'70%'}>
+              <Input
+                h={'30px'}
+                bgColor={'#FFFAE8'}
+                border={'#FFB800 1px solid'}
+                fontSize={'1.6rem'}
+              />
+            </FormControl>
+          </HStack>
+          <HStack className="login_pare">
+            <Text className="login_form">パスワード</Text>
+            <FormControl isRequired width={'70%'}>
+              <Input
+                h={'30px'}
+                bgColor={'#FFFAE8'}
+                border={'#FFB800 1px solid'}
+                fontSize={'1.6rem'}
+              />
+            </FormControl>
+          </HStack>
+        </Box>
+        <Button className="login_btn">ログイン</Button>
+      </div>
     </PageLayout>
   )
 }
