@@ -1,0 +1,25 @@
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login_flex {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.login_flex .login_box {
+  width: 70%;
+  max-width: 1200px;
+  padding: 5% 7%;
+  border-radius: 30px;
+}
+.login_flex .login_btn {
+  margin: 5%;
+  width: 200px;
+  height: 80px;
+}/*# sourceMappingURL=style.css.map */
