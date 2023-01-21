@@ -1,4 +1,7 @@
 @use "mixin" as m;
+html{
+	font-size: 62.5%;
+}
 // flex中央
 .flex{
 	display: flex;

@@ -7,20 +7,20 @@ export const SignIn = () => {
     <PageLayout>
       <div className="login_flex">
       <Box className='login_box' bg="white">
-        <HStack>
-          <Text>学籍番号</Text>
-          <FormControl isRequired width={'70%'}>
-            <Input placeholder="First name" />
+        <HStack className="login_pare">
+          <Text className='login_form'>学籍番号</Text>
+          <FormControl  isRequired width={'70%'}>
+            <Input h={"30px"}/>
           </FormControl>
         </HStack>
-        <HStack>
-          <Text>パスワード</Text>
+        <HStack className="login_pare">
+          <Text className='login_form'>パスワード</Text>
           <FormControl isRequired width={'70%'}>
-            <Input placeholder="First name" />
+            <Input h={"30px"}/>
           </FormControl>
         </HStack>
       </Box>
-      <Button className='login_btn' colorScheme="blue">Button</Button>
+      <Button className='login_btn'>ログイン</Button>
       </div>
     </PageLayout>
   )
