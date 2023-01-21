@@ -66,42 +66,44 @@ export const SignIn = () => {
 
   return (
     <PageLayout hasHeader={false}>
-      <div className="login_flex">
-        <Box className="login_box" bg="white">
-          <HStack className="login_pare">
-            <Text className="login_form">メールアドレス</Text>
-            {/* <Text className="login_form">学籍番号</Text> */}
-            <FormControl isRequired width={'70%'}>
-              <Input
-                h={'30px'}
-                bgColor={'#FFFAE8'}
-                border={'#FFB800 1px solid'}
-                fontSize={'1.6rem'}
-                onChange={(e) => {
-                  setEmail(e.target.value)
-                }}
-              />
-            </FormControl>
-          </HStack>
-          <HStack className="login_pare">
-            <Text className="login_form">パスワード</Text>
-            <FormControl isRequired width={'70%'}>
-              <Input
-                h={'30px'}
-                bgColor={'#FFFAE8'}
-                border={'#FFB800 1px solid'}
-                fontSize={'1.6rem'}
-                onChange={(e) => {
-                  setPassword(e.target.value)
-                }}
-              />
-            </FormControl>
-          </HStack>
-        </Box>
-        <Button className="login_btn" onClick={onsubmit}>
-          ログイン
-        </Button>
-      </div>
+      <Center h={'calc(100vh)'}>
+        <div className="login_flex">
+          <Box className="login_box" bg="white">
+            <HStack className="login_pare">
+              <Text className="login_form">メールアドレス</Text>
+              {/* <Text className="login_form">学籍番号</Text> */}
+              <FormControl isRequired width={'70%'}>
+                <Input
+                  h={'30px'}
+                  bgColor={'#FFFAE8'}
+                  border={'#FFB800 1px solid'}
+                  fontSize={'1.6rem'}
+                  onChange={(e) => {
+                    setEmail(e.target.value)
+                  }}
+                />
+              </FormControl>
+            </HStack>
+            <HStack className="login_pare">
+              <Text className="login_form">パスワード</Text>
+              <FormControl isRequired width={'70%'}>
+                <Input
+                  h={'30px'}
+                  bgColor={'#FFFAE8'}
+                  border={'#FFB800 1px solid'}
+                  fontSize={'1.6rem'}
+                  onChange={(e) => {
+                    setPassword(e.target.value)
+                  }}
+                />
+              </FormControl>
+            </HStack>
+          </Box>
+          <Button className="login_btn" onClick={onsubmit}>
+            ログイン
+          </Button>
+        </div>
+      </Center>
     </PageLayout>
   )
 }
