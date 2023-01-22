@@ -30,7 +30,6 @@ html {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-top: 10px;
 }
 .login_flex .login_box {
   display: flex;
