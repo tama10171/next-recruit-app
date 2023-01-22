@@ -1,7 +1,6 @@
 import { PageLayout } from '@/components/layouts/PageLayout'
 import { Center, SimpleGrid } from '@chakra-ui/react'
 import { LinkButton } from '@/components/pages/main/LinkButton'
-
 const MainPage = () => {
   return (
     <PageLayout>

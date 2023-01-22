@@ -30,6 +30,7 @@ html {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  margin-top: 10px;
 }
 .login_flex .login_box {
   display: flex;
@@ -40,7 +41,7 @@ html {
   aspect-ratio: 6/2;
   padding: 3% 7%;
   border-radius: 15px;
-  border: #FFB800 3px solid;
+  border: #ffb800 3px solid;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.542);
 }
 @media screen and (max-width: 768px) {
@@ -68,7 +69,7 @@ html {
 }
 .login_flex .login_btn {
   position: relative;
-  background-color: #FFB800;
+  background-color: #ffb800;
   margin: 5%;
   width: 200px;
   aspect-ratio: 3/1;

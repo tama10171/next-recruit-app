@@ -1,6 +1,7 @@
 import { PageLayout } from '@/components/layouts/PageLayout'
 import { useUser } from '@/hooks/useUser'
 import { supabase } from '@/libs/supabaseClient'
+import Image from 'next/image'
 
 import {
   AlertDialogBody,
@@ -10,6 +11,7 @@ import {
   FormControl,
   FormLabel,
   HStack,
+  VStack,
   Input,
   Text,
 } from '@chakra-ui/react'
@@ -66,8 +68,10 @@ export const SignIn = () => {
 
   return (
     <PageLayout hasHeader={false}>
-      <Center h={'calc(100vh)'}>
-        <div className="login_flex">
+      <Center h={'calc(100vh)'}display={"flex"} flexDirection={"column"}>
+        <VStack w={"100%"}>
+      <Image src="/images/logo.png" width={300} height={220} alt="logo"></Image>
+        <Box className="login_flex" m={"10px"}>
           <Box className="login_box" bg="white">
             <HStack className="login_pare">
               <Text className="login_form">メールアドレス</Text>
@@ -102,7 +106,8 @@ export const SignIn = () => {
           <Button className="login_btn" onClick={onsubmit}>
             ログイン
           </Button>
-        </div>
+        </Box>
+        </VStack>
       </Center>
     </PageLayout>
   )
