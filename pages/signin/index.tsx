@@ -70,7 +70,8 @@ export const SignIn = () => {
     <PageLayout hasHeader={false}>
       <Center h={'calc(100vh)'}display={"flex"} flexDirection={"column"}>
         <VStack w={"100%"}>
-      <Image src="/images/logo.png" width={300} height={220} alt="logo"></Image>
+          
+          <Box m={"3% 0"}><Image src="/images/logo.png" width={330} height={240} alt="logo"></Image></Box>
         <Box className="login_flex" m={"10px"}>
           <Box className="login_box" bg="white">
             <HStack className="login_pare">
