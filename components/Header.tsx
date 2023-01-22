@@ -13,12 +13,15 @@ import {
   Text,
 } from '@chakra-ui/react'
 import { UtilColors } from 'src/colors'
+import Image from 'next/image'
 
 export const Header = () => {
   return (
     <div>
       <Box w={'100vw'} h={'60px'} bg={UtilColors.background.main}>
-        <HStack w={'auto'} h={'100%'} justifyContent={'flex-end'} mr={'8px'}>
+        <HStack w={'auto'} h={'100%'} justifyContent={'space-between'} mr={'8px'}>
+          <Box m={"0 20px"}><Image src={"/images/logo.png"} width={70} height={57} alt={"logo"}></Image></Box>
+          <HStack>
           <Link href="/">
             <Button
               bg={'#fff'}
@@ -103,6 +106,7 @@ export const Header = () => {
               企業検索
             </Button>
           </Link>
+          </HStack>
         </HStack>
       </Box>
     </div>
