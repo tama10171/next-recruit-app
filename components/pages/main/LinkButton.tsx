@@ -26,12 +26,12 @@ export const LinkButton = (props: LinkButtonProps) => {
       <Button
         m={'10%'}
         w={'250px'}
-        _hover={{ bg: '#dd8800', transform: 'translate(5px,5px)', boxShadow: '0px 0px 0px 0px' }}
-        fontSize={'20px'}
+        _hover={{ transform: 'translate(5px,5px)', boxShadow: '0px 0px 0px 0px' }}
+        fontSize={'25px'}
         borderRadius={'10px'}
         bg={'#FFB800'}
         padding={'40px 0'}
-        boxShadow={'5px 5px 10px rgba(0, 0, 0, 0.542)'}
+        boxShadow={'0 8px 0 #cd8800'}
         _after={{
           pos: 'absolute',
           w: 'calc(100% - 7px)',
