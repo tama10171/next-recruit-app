@@ -50,7 +50,7 @@ export const NewsAccordion = (props: any) => {
               </h2>
               <AccordionPanel
                 p={'15px 5px'}
-                bg={'#f0f0f0'}
+                bg={'#FFFAE8'}
                 borderRadius={'10px'}
                 mb={'1%'}
                 padding={'2%'}
