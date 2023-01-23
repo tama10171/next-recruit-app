@@ -1,26 +1,48 @@
-@use "mixin" as m;
-html{
-	font-size: 62.5%;
+@use 'mixin' as m;
+html {
+  font-size: 62.5%;
+  background: #ffe7a9;
 }
 // flex中央
-.flex{
-	display: flex;
-	justify-content: center;
-	align-items: center;
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 // リンクボタン
-.LinkButton{
-	padding: 40px 0;
-	font-size: 2rem;
-	width: 250px;
-	margin: 10%;
-	&::after{
-		position: absolute;
-		content: "";
-		width: calc(100% - 7px);
-		height: calc(100% - 7px);
-		border: #fff 2px solid;
-		border-radius: 8px;
-	}
-
+.LinkButton {
+  padding: 40px 0;
+  font-size: 2rem;
+  width: 250px;
+  margin: 10%;
+  &::after {
+    position: absolute;
+    content: '';
+    width: calc(100% - 7px);
+    height: calc(100% - 7px);
+    border: #fff 2px solid;
+    border-radius: 8px;
+  }
+}
+//汎用サブタイトルボタン
+.sub_title {
+  position: relative;
+  font-size: 3rem;
+  padding: 8px 0 8px 10px;
+  text-align: center;
+  width: 33rem;
+  font-weight: bold;
+  background-color: #fff;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.542);
+  margin: 10% auto;
+  transform: rotate(-5deg);
+  &::before {
+    content: '';
+    position: absolute;
+    width: 10%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #ffb800;
+  }
 }
