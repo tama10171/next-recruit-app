@@ -153,4 +153,8 @@ html {
 }
 .news_lists .Accordion {
   z-index: 999;
+}
+
+.Accordion {
+  border-collapse: collapse;
 }/*# sourceMappingURL=style.css.map */

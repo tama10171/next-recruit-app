@@ -30,11 +30,16 @@ export const NewsAccordion = (props: any) => {
   return (
     <>
       <Accordion allowToggle>
-        {news?.map((m) => {
+        {news?.map((m, index) => {
           return (
             <AccordionItem key={m.id} zIndex={999}>
               <h2>
-                <AccordionButton borderTop={'#ffb800 1px solid'} p={'15px 5px'}>
+                <AccordionButton
+                  className="Accordion"
+                  // borderTop={'#ffb800 1px solid'}
+                  // borderBottom={index + 1 === news.length ? '#ffb800 1px solid' : ''}
+                  p={'15px 5px'}
+                >
                   <Box as="span" flex="1" w={'100%'}>
                     <HStack w={'100%'} display={'flex'} justifyContent={'flex-start'}>
                       <Box whiteSpace={'nowrap'} fontSize={'15px'} mr={'5%'}>
@@ -52,8 +57,9 @@ export const NewsAccordion = (props: any) => {
                 p={'15px 5px'}
                 bg={'#FFFAE8'}
                 borderRadius={'10px'}
-                mb={'1%'}
                 padding={'2%'}
+                mb={'2%'}
+                // borderBottom={index + 1 === news.length ? '#ffb800 1px solid' : ''}
               >
                 {m.description}
               </AccordionPanel>
