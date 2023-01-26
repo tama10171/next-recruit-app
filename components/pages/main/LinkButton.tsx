@@ -25,9 +25,9 @@ export const LinkButton = (props: LinkButtonProps) => {
     <Link to={href} {...props}>
       <Button
         m={'10%'}
-        w={'250px'}
+        w={{ base: '130px', md: '250px', sm: '170px' }}
         _hover={{ transform: 'translate(5px,5px)', boxShadow: '0px 0px 0px 0px' }}
-        fontSize={'25px'}
+        fontSize={{ base: '18px', md: '25px' }}
         borderRadius={'10px'}
         bg={'#FFB800'}
         padding={'40px 0'}
