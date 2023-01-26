@@ -17,14 +17,22 @@ import { useEffect, useState } from 'react'
 
 // export const NewsAdd = (props: any) => {
 export default function NewsAdd() {
-    const [news, setNews] = useState<any[] | null>(null)
-  
+  // const [date, setDate] = useState('')
+  const [title, setTitle] = useState('')
+  const [contents, setContents] = useState('')
+
     const newsData = async () => {
-      let { data, error } = await supabase.from('news').select('*')
-  
-      setNews(data)
+
+      const updates = {
+        created_at: new Date().toLocaleDateString(),
+        subtitle: title,
+        description: contents,
+      }
+      
+      let { data, error } = await supabase.from('news').insert([updates])
   
       console.log(data)
+      if (error) console.log(error)
     }
 
     return (
@@ -32,19 +40,23 @@ export default function NewsAdd() {
         <Box>
           <Stack >
             <HStack>
-              <Box>日付</Box>
-              <Input ></Input>
-            </HStack>
-            <HStack>
               <Box>タイトル</Box>
-              <Input ></Input>
+              <Input 
+                onChange={(e) => {
+                  setTitle(e.target.value)
+                }}
+              ></Input>
             </HStack>
             <HStack>
               <Box>内容</Box>
-              <Input ></Input>
+              <Input 
+                onChange={(e) => {
+                  setContents(e.target.value)
+                }}
+              ></Input>
             </HStack>
           </Stack>
-          <Button>追加</Button>
+          <Button onClick={newsData}>追加</Button>
         </Box>
       </>
     )
