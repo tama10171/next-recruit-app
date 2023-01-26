@@ -11,6 +11,7 @@ import {
     Input,
     Stack,
     Button,
+    Link,
 } from '@chakra-ui/react'
 import { supabase } from '@/libs/supabaseClient'
 import { useEffect, useState } from 'react'
@@ -56,6 +57,9 @@ export default function NewsAdd() {
               ></Input>
             </HStack>
           </Stack>
+          <Link href="/news">
+            <Button >戻る</Button>
+          </Link>
           <Button onClick={newsData}>追加</Button>
         </Box>
       </>
