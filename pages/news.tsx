@@ -1,7 +1,7 @@
 import { PageLayout } from '@/components/layouts/PageLayout'
 import SubTitle from '@/components/layouts/subTitle'
 import { NewsAccordion } from '@/components/pages/news/NewsAccordion'
-import { Box } from '@chakra-ui/react'
+import { Box, Button, Link } from '@chakra-ui/react'
 
 export default function news() {
   return (
@@ -20,6 +20,9 @@ export default function news() {
         >
           <NewsAccordion className="Accordion" />
         </Box>
+        <Link href="/newsAdd">
+          <Button>追加</Button>
+        </Link>
       </PageLayout>
     </>
   )
