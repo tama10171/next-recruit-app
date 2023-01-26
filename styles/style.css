@@ -138,6 +138,7 @@ html {
   flex-direction: column;
   margin: 0 auto;
   padding: 3% 5% 5%;
+  z-index: 1;
 }
 .news_lists::after {
   position: absolute;
@@ -147,14 +148,13 @@ html {
   border-radius: 20px;
   width: calc(100% - 6px);
   height: calc(100% - 6px);
-  border: #FFB800 3px solid;
+  border: #ffb800 3px solid;
+  z-index: 1;
 }
-.news_lists dl {
-  width: 100%;
-  padding: 3% 0;
-  display: flex;
-  border-bottom: #FFB800 1px solid;
+.news_lists .Accordion {
+  z-index: 999;
 }
-.news_lists dl dt {
-  margin: 0 10% 0 3%;
+
+.Accordion {
+  border-collapse: collapse;
 }/*# sourceMappingURL=style.css.map */
