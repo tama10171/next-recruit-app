@@ -42,10 +42,14 @@ export const NewsAccordion = (props: any) => {
                 >
                   <Box as="span" flex="1" w={'100%'}>
                     <HStack w={'100%'} display={'flex'} justifyContent={'flex-start'}>
-                      <Box whiteSpace={'nowrap'} fontSize={'15px'} mr={'5%'}>
+                      <Box whiteSpace={'nowrap'} fontSize={{ base: '13px', md: '15px' }} mr={'5%'}>
                         {m.created_at}
                       </Box>
-                      <Box whiteSpace={'nowrap'} fontSize={'15px'} fontWeight={'bold'}>
+                      <Box
+                        whiteSpace={'nowrap'}
+                        fontSize={{ base: '13px', md: '15px' }}
+                        fontWeight={'bold'}
+                      >
                         {m.subtitle}
                       </Box>
                     </HStack>
