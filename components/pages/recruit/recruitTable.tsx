@@ -1,56 +1,58 @@
 import {
-    TableContainer,
-    Table,
-    Thead,
-    Tr,
-    Th,
-    Tbody,
-    Td,
-    Tfoot,
-    Accordion,
-    AccordionItem,
-    AccordionButton,
-    Button,
-    Box,
-    AccordionPanel,
-    AccordionIcon,
-    Input,
-    Stack,
-    Select,
-  } from '@chakra-ui/react'  
+  TableContainer,
+  Table,
+  Thead,
+  Tr,
+  Th,
+  Tbody,
+  Td,
+  Tfoot,
+  Accordion,
+  AccordionItem,
+  AccordionButton,
+  Button,
+  Box,
+  AccordionPanel,
+  AccordionIcon,
+  Input,
+  Stack,
+  Select,
+  NumberInput,
+  NumberInputField,
+  NumberInputStepper,
+  NumberIncrementStepper,
+  NumberDecrementStepper,
+} from '@chakra-ui/react'  
 import { supabase } from '@/libs/supabaseClient'
 import { useEffect, useState } from 'react'
-import { m } from 'framer-motion'
 
 export const RecruitTable = (props: any) => {
   const [ user, setUser ] = useState<any[] | null>(null)
   const [ table, setTable ] = useState<any[] | null>(null)
-  const [ user_id, setUser_id ] = useState('')
   const [ full_name, setFullName ] = useState('')
 
-  const [serial_number, setSerial_number] = useState(0)
-  const [code, setCode] = useState(0)
+  const [serial_number, setSerial_number] = useState<number>(0)
+  const [code, setCode] = useState<number>(0)
   const [name, setName] = useState('')
-  const [result, setResult] = useState()
+  const [result, setResult] = useState<Boolean>()
   const [acceptance_date, setAcceptance_date] = useState<Date>()
   const [content, setContent] = useState('')
   const [place, setPlace] = useState('')
   const [Implementation_date, setImplementation_date] = useState<Date>()
   const [absence_date, setAbsence_data] = useState<Date>()
-  const [absence_status, setAbsence_status] = useState()
-  const [intermediate_result, setIntermediate_result] = useState()
+  const [absence_status, setAbsence_status] = useState<Boolean>()
+  const [intermediate_result, setIntermediate_result] = useState<Boolean>()
   
 
   const TableData = async () => {
     const { data: { user } ,error  } = await supabase.auth.getUser()
     console.log(user);
-    // if (error) console.log(error)
+    if (error) console.log(error)
     
     if (user){
-      setUser_id(user.id)
-      // setFullName(user.full_name)
       let { data, error } = await supabase.from('profiles').select('*').eq('id', user.id)
       console.log(data);
+      if (error) console.log(error)
       setUser(data)
       data?.map((data: any, index) => {
         setFullName(data.full_name)
@@ -61,19 +63,43 @@ export const RecruitTable = (props: any) => {
       let { data, error } = await supabase.from('companyinfo').select('*').eq('user_id', user.id).order('serial_number', { ascending: true })
       console.log(data);
       if (error) console.log(error)
-      // setData(data)
       setTable(data)
-      // table?.map((data: any, index) => {
-      //   setSerial_number(parseInt(data.serial_number))
-      //   // console.log(serial_number);
-      // })
     }
   }
   useEffect(() => {
     TableData()
   }, [])
 
+  // 追加
+  const insertDate = async () => {
+    
+  }
+
+  // 更新
   const upDate = async () => {
+    if(table){
+      const postData = await Promise.all(
+        table.map(async (td: any, index) => {
+        //   let { data, error } = await supabase.from('companyinfo')
+        //   .update({
+        //     // serial_number: serial_number,
+        //     // user_id: user_id,
+        //     code: code,
+        //     name: name,
+        //     result: result,
+        //     acceptance_date: acceptance_date,
+        //     content: content,
+        //     place: place,
+        //     Implementation_date: Implementation_date,
+        //     absence_date: absence_date,
+        //     absence_status: absence_status,
+        //     intermediate_result: intermediate_result,
+        //   // }).eq('user_id', user_id).eq('serial_number', index+2)
+        // }).eq('user_id', user_id).eq('serial_number', 0)
+          console.log(td);
+        })
+      )
+    }
   }
 
   return (
@@ -107,21 +133,35 @@ export const RecruitTable = (props: any) => {
                     </Tr>
                   </Thead>
                   <Tbody>
+                    {/* 更新 */}
                     {table?.map((data: any, index) => {
                       return (
                         <Tr key={data.id}>
-                          {/* <Td><Input type="number" onChange={(e) => { setSerial_number(parseInt(e.target.value)), data.serial_number = e.target.value }} value={serial_number} ></Input></Td> */}
-                          <Td><Input type="number" onChange={(e) => { data.serial_number = e.target.value }} value={data.serial_number} ></Input></Td>
-                          <Td><Input type="number" onChange={(e) => { data.code = e.target.value }} value={data.code}></Input></Td>
-                          <Td><Input onChange={(e) => { data.name = e.target.value }} value={data.name}></Input></Td>
+                          {/* <Td><Input type="number" onChange={(e) => { data.serial_number = parseInt(e.target.value)) }} value={data.serial_number} ></Input></Td>
+                          <Td><Input type="number" onChange={(e) => { data.code = parseInt(e.target.value)) }} value={data.code}></Input></Td> */}
+                          <Td><NumberInput defaultValue={data.serial_number} min={0} onChange={(e) => { data.serial_number = parseInt(e.valueOf()) }}>
+                            <NumberInputField />
+                            <NumberInputStepper>
+                              <NumberIncrementStepper />
+                              <NumberDecrementStepper />
+                            </NumberInputStepper>
+                          </NumberInput></Td>
+                          <Td><NumberInput defaultValue={data.code} min={0} onChange={(e) => { data.code = parseInt(e.valueOf()) }}>
+                            <NumberInputField />
+                            <NumberInputStepper>
+                              <NumberIncrementStepper />
+                              <NumberDecrementStepper />
+                            </NumberInputStepper>
+                          </NumberInput></Td>
+                          <Td><Input onChange={(e) => { data.name = e.target.value }} placeholder={data.name}></Input></Td>
                           <Td><Select placeholder={(data.result ? '合格':'不合格')} onChange={(e) => { data.result = (e.target.value === "合格"); }}>
                             <option value={(data.result ? '不合格':'合格')}>{(data.result ? '不合格':'合格')}</option>
                           </Select></Td>
-                          <Td><Input type="date" onChange={(e) => { data.acceptance_date = e.target.value }} value={data.acceptance_date}></Input></Td>
-                          <Td><Input onChange={(e) => { data.content = e.target.value }} value={data.content}></Input></Td>
-                          <Td><Input onChange={(e) => { data.place = e.target.value }} value={data.place}></Input></Td>
-                          <Td><Input type="date" onChange={(e) => { data.Implementation_date = e.target.value }} value={data.Implementation_date}></Input></Td>
-                          <Td><Input type="date" onChange={(e) => { data.absence_date = e.target.value }} value={data.absence_date}></Input></Td>
+                          <Td><Input type="date" onChange={(e) => { data.acceptance_date = e.target.value }} placeholder={data.acceptance_date}></Input></Td>
+                          <Td><Input onChange={(e) => { data.content = e.target.value }} placeholder={data.content}></Input></Td>
+                          <Td><Input onChange={(e) => { data.place = e.target.value }} placeholder={data.place}></Input></Td>
+                          <Td><Input type="date" onChange={(e) => { data.Implementation_date = e.target.value }} placeholder={data.Implementation_date}></Input></Td>
+                          <Td><Input type="date" onChange={(e) => { data.absence_date = e.target.value }} placeholder={data.absence_date}></Input></Td>
                           <Td><Select placeholder={(data.absence_status ? '許可':'不許可')} onChange={(e) => { data.absence_status = (e.target.value === '許可'); }}>
                             <option value={(data.absence_status ? '不許可':'許可')}>{(data.absence_status ? '不許可':'許可')}</option>
                           </Select></Td>
@@ -146,6 +186,43 @@ export const RecruitTable = (props: any) => {
                         </Tr>
                       )
                     })}
+                    {/* 追加 */}
+                    <Tr>
+                      {/* <Td><Input type="number" onChange={(e) => { setSerial_number(parseInt(e.target.value)) }}></Input></Td>
+                      <Td><Input type="number" onChange={(e) => { setCode(parseInt(e.target.value)) }}></Input></Td> */}
+                      <Td><NumberInput defaultValue={serial_number} min={0} onChange={(e) => { setSerial_number(parseInt(e.valueOf())) }}>
+                        <NumberInputField />
+                        <NumberInputStepper>
+                          <NumberIncrementStepper />
+                          <NumberDecrementStepper />
+                        </NumberInputStepper>
+                      </NumberInput></Td>
+                      <Td><NumberInput defaultValue={serial_number} min={0} onChange={(e) => { setCode(parseInt(e.valueOf())) }}>
+                        <NumberInputField />
+                        <NumberInputStepper>
+                          <NumberIncrementStepper />
+                          <NumberDecrementStepper />
+                        </NumberInputStepper>
+                      </NumberInput></Td>
+                      <Td><Input onChange={(e) => { setName(e.target.value) }}></Input></Td>
+                      <Td><Select placeholder=' ' onChange={(e) => { setResult( e.target.value === "合格" )}}>
+                        <option value='合格'>合格</option>
+                        <option value='不合格'>不合格</option>
+                      </Select></Td>
+                      <Td><Input type="date" onChange={(e) => { setAcceptance_date(new Date(e.target.value)) }}></Input></Td>
+                      <Td><Input onChange={(e) => { setContent(e.target.value) }}></Input></Td>
+                      <Td><Input onChange={(e) => { setPlace(e.target.value) }}></Input></Td>
+                      <Td><Input type="date" onChange={(e) => { setImplementation_date(new Date(e.target.value)) }}></Input></Td>
+                      <Td><Input type="date" onChange={(e) => { setAbsence_data(new Date(e.target.value)) }}></Input></Td>
+                      <Td><Select placeholder=' ' onChange={(e) => { setAbsence_status( e.target.value === "許可" )}}>
+                        <option value='許可'>許可</option>
+                        <option value='不許可'>不許可</option>
+                      </Select></Td>
+                      <Td><Select placeholder=' ' onChange={(e) => { setIntermediate_result(e.target.value === "合格"); }}>
+                        <option value='合格'>合格</option>
+                        <option value='不許可'>不合格</option>
+                      </Select></Td>
+                    </Tr>
                   </Tbody>
                 </Table>
               </TableContainer>
@@ -153,6 +230,7 @@ export const RecruitTable = (props: any) => {
         </AccordionItem>
       </Accordion>
       
+      <Button onClick={insertDate}>追加</Button>
       <Button onClick={upDate}>変更</Button>
     </>
   )
