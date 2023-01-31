@@ -7,7 +7,6 @@ import {
   Th,
   Tbody,
   Td,
-  Tfoot,
   Accordion,
   AccordionItem,
   AccordionButton,
@@ -18,7 +17,6 @@ import {
   CircularProgress,
 } from '@chakra-ui/react'
 import { useEffect, useState } from 'react'
-import { Company } from 'src/interfaces/companyTypes'
 import { User } from 'src/interfaces/userType'
 
 export const RecruitContent = () => {
@@ -99,8 +97,6 @@ const ListItem = (props: { user: User }) => {
               </Thead>
               <Tbody>
                 {companys.map((company: any) => {
-                  // console.log(company)
-
                   return (
                     <Tr key={company.id}>
                       <Td>{company.serial_number}</Td>
@@ -117,33 +113,6 @@ const ListItem = (props: { user: User }) => {
                     </Tr>
                   )
                 })}
-
-                {/* <Tr>
-                <Td>2</Td>
-                <Td>2222</Td>
-                <Td>株式会社ツー</Td>
-                <Td>2</Td>
-                <Td>2222</Td>
-                <Td>株式会社ツー</Td>
-                <Td>2</Td>
-                <Td>2222</Td>
-                <Td>株式会社ツー</Td>
-                <Td>2</Td>
-                <Td>2222</Td>
-              </Tr>
-              <Tr>
-                <Td>3</Td>
-                <Td>3333</Td>
-                <Td>株式会社スリー</Td>
-                <Td>3</Td>
-                <Td>3333</Td>
-                <Td>株式会社スリー</Td>
-                <Td>3</Td>
-                <Td>3333</Td>
-                <Td>株式会社スリー</Td>
-                <Td>3</Td>
-                <Td>3333</Td>
-              </Tr> */}
               </Tbody>
             </Table>
           </TableContainer>
@@ -153,18 +122,3 @@ const ListItem = (props: { user: User }) => {
   )
 }
 
-// {
-//   "serial_number": 1,
-//   "code": 111,
-//   "name": "株式会社あ",
-//   "id": "d5c33b02-aa37-4449-9a95-f031d28f2dca",
-//   "user_id": "0570759d-fa66-4f68-a7bd-5ed719a51a50",
-//   "result": null,
-//   " acceptanceDate": null,
-//   " content": "インターンシップ",
-//   "place": "本社",
-//   "ImplementationDate": "2023-01-26",
-//   " absenceDate": "2023-01-19",
-//   " absenceStatus": false,
-//   " intermediateResult": null
-// }
