@@ -9,7 +9,7 @@ const MainPage = () => {
           <LinkButton info="活動登録" href={'/main'} ml={'-10%'} />
           <LinkButton info="活動一覧" href={'/recruit'} ml={'-10%'} />
           <LinkButton info="グッドJOB" href={'/news'} ml={'-10%'} />
-          <LinkButton info="企業検索" href={'/'} ml={'-10%'} />
+          <LinkButton info="企業検索" href={'http://intra.denpa.ac.jp/prog/career/company.php'} ml={'-10%'} />
         </SimpleGrid>
       </Center>
     </PageLayout>

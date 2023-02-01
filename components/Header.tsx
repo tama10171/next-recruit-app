@@ -21,10 +21,12 @@ export const Header = () => {
       <Box w={'100vw'} h={'60px'} bg={UtilColors.background.main}>
         <HStack w={'auto'} h={'100%'} justifyContent={'space-between'} mr={'8px'}>
           <Box m={'0 20px'}>
+            <Link href='./main'>
             <Image src={'/images/logo.png'} width={70} height={57} alt={'logo'}></Image>
+            </Link>
           </Box>
           <HStack>
-            <Link href="/">
+            <Link href="/recruit">
               <Button
                 bg={'#fff'}
                 w={{ base: '58px', sm: '90px' }}
@@ -66,7 +68,7 @@ export const Header = () => {
                 登録・変更
               </Button>
             </Link>
-            <Link href="/">
+            <Link href="/news">
               <Button
                 bg={'#fff'}
                 w={{ base: '58px', sm: '90px' }}
@@ -87,7 +89,7 @@ export const Header = () => {
                 グッドJOB
               </Button>
             </Link>
-            <Link href="/">
+            <Link href="http://intra.denpa.ac.jp/prog/career/company.php">
               <Button
                 bg={'#fff'}
                 w={{ base: '58px', sm: '90px' }}
