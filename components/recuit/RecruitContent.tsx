@@ -35,7 +35,6 @@ export const RecruitContent = () => {
 
   return (
     <Box p={5}>
-      x
       <Accordion allowToggle>
         {/* データがあるだけ表示 */}
         {users?.map((user) => {
@@ -65,7 +64,7 @@ const ListItem = (props: { user: User }) => {
   if (!companys) return <CircularProgress isIndeterminate color="green.300" />
 
   return (
-    <AccordionItem>
+    <AccordionItem background={'#000'} color={'red'}>
       <h2>
         <AccordionButton>
           <AccordionIcon />
@@ -121,4 +120,3 @@ const ListItem = (props: { user: User }) => {
     </AccordionItem>
   )
 }
-
