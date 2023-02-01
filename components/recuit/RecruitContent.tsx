@@ -18,6 +18,7 @@ import {
 } from '@chakra-ui/react'
 import { useEffect, useState } from 'react'
 import { User } from 'src/interfaces/userType'
+import SubTitle from '../layouts/subTitle'
 
 export const RecruitContent = () => {
   const [users, setUsers] = useState<any[] | null>(null)
@@ -35,6 +36,8 @@ export const RecruitContent = () => {
 
   return (
     <Box p={5}>
+      <SubTitle className="sub_title" title="グッドJOB INFO" />
+
       <Accordion allowToggle>
         {/* データがあるだけ表示 */}
         {users?.map((user) => {
