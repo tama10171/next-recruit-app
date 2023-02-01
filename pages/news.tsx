@@ -10,9 +10,8 @@ export default function news() {
         <SubTitle className="sub_title" title="グッドJOB INFO" />
         <Box
           pos={'relative'}
-          fontSize={'15px'}
           borderRadius={'20px'}
-          w={'80%'}
+          w={{ base: '95%', md: '80%' }}
           background={'#fff'}
           m={'0 auto'}
           p={'3% 5% 5%'}
