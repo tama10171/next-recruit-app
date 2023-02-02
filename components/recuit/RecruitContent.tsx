@@ -18,6 +18,7 @@ import {
 } from '@chakra-ui/react'
 import { useEffect, useState } from 'react'
 import { User } from 'src/interfaces/userType'
+import SubTitle from '../layouts/subTitle'
 
 export const RecruitContent = () => {
   const [users, setUsers] = useState<any[] | null>(null)
@@ -35,6 +36,8 @@ export const RecruitContent = () => {
 
   return (
     <Box p={5}>
+      <SubTitle className="sub_title" title="活動一覧" />
+
       <Accordion allowToggle>
         {/* データがあるだけ表示 */}
         {users?.map((user) => {
@@ -64,11 +67,11 @@ const ListItem = (props: { user: User }) => {
   if (!companys) return <CircularProgress isIndeterminate color="green.300" />
 
   return (
-    <AccordionItem background={'#000'} color={'red'}>
+    <AccordionItem background={'#fff'} color={'#000'} fontSize={16}>
       <h2>
-        <AccordionButton>
+        <AccordionButton p={'10px'}>
           <AccordionIcon />
-          <Box as="span" flex="1" textAlign="left" fontWeight={'bold'} fontSize={12}>
+          <Box as="span" flex="1" textAlign="left" fontWeight={'bold'} fontSize={16} ml={'10px'}>
             CTB20_{user.full_name}
           </Box>
         </AccordionButton>
@@ -80,35 +83,134 @@ const ListItem = (props: { user: User }) => {
           <TableContainer>
             <Table size="sm">
               <Thead>
-                <Tr>
-                  <Th>通番</Th>
-                  <Th>企業コード</Th>
-                  <Th>企業名</Th>
-                  <Th>最終結果</Th>
-                  <Th>内定承諾提出日</Th>
-                  <Th>活動内容</Th>
-                  <Th>場所</Th>
-                  <Th>実施日</Th>
-                  <Th>公欠提出日</Th>
-                  <Th>公欠状態</Th>
-                  <Th>結果</Th>
+                <Tr bg={'#000'} h={'25px'} border={'1px solid #000'}>
+                  <Th fontSize={13} color={'#FF9900'}>
+                    通番
+                  </Th>
+                  <Th fontSize={13} color={'#FF9900'}>
+                    企業コード
+                  </Th>
+                  <Th fontSize={13} color={'#FF9900'}>
+                    企業名
+                  </Th>
+                  <Th fontSize={13} color={'#FF9900'}>
+                    最終結果
+                  </Th>
+                  <Th fontSize={13} color={'#FF9900'}>
+                    内定承諾提出日
+                  </Th>
+                  <Th fontSize={13} color={'#FF9900'}>
+                    活動内容
+                  </Th>
+                  <Th fontSize={13} color={'#FF9900'}>
+                    場所
+                  </Th>
+                  <Th fontSize={13} color={'#FF9900'}>
+                    実施日
+                  </Th>
+                  <Th fontSize={13} color={'#FF9900'}>
+                    公欠提出日
+                  </Th>
+                  <Th fontSize={13} color={'#FF9900'}>
+                    公欠状態
+                  </Th>
+                  <Th fontSize={13} color={'#FF9900'}>
+                    結果
+                  </Th>
                 </Tr>
               </Thead>
-              <Tbody>
+              <Tbody m={'6px'}>
                 {companys.map((company: any) => {
                   return (
-                    <Tr key={company.id}>
-                      <Td>{company.serial_number}</Td>
-                      <Td>{company.code}</Td>
-                      <Td>{company.name}</Td>
-                      <Td>{company.result}</Td>
-                      <Td>{company.acceptance_date}</Td>
-                      <Td>{company.content}</Td>
-                      <Td>{company.place}</Td>
-                      <Td>{company.Implementation_date}</Td>
-                      <Td>{company.absence_date}</Td>
-                      <Td>{company.absence_status}</Td>
-                      <Td>{company.intermediat_result}</Td>
+                    <Tr key={company.id} h={'30px'}>
+                      <Td
+                        fontSize={15}
+                        borderRight={'1px solid #000'}
+                        borderLeft={'1px solid #000'}
+                        borderBottom={'1px solid #000'}
+                      >
+                        {company.serial_number}
+                      </Td>
+                      <Td
+                        fontSize={15}
+                        borderRight={'1px solid #000'}
+                        borderLeft={'1px solid #000'}
+                        borderBottom={'1px solid #000'}
+                      >
+                        {company.code}
+                      </Td>
+                      <Td
+                        fontSize={15}
+                        borderRight={'1px solid #000'}
+                        borderLeft={'1px solid #000'}
+                        borderBottom={'1px solid #000'}
+                      >
+                        {company.name}
+                      </Td>
+                      <Td
+                        fontSize={15}
+                        borderRight={'1px solid #000'}
+                        borderLeft={'1px solid #000'}
+                        borderBottom={'1px solid #000'}
+                      >
+                        {company.result}
+                      </Td>
+                      <Td
+                        fontSize={15}
+                        borderRight={'1px solid #000'}
+                        borderLeft={'1px solid #000'}
+                        borderBottom={'1px solid #000'}
+                      >
+                        {company.acceptance_date}
+                      </Td>
+                      <Td
+                        fontSize={15}
+                        borderRight={'1px solid #000'}
+                        borderLeft={'1px solid #000'}
+                        borderBottom={'1px solid #000'}
+                      >
+                        {company.content}
+                      </Td>
+                      <Td
+                        fontSize={15}
+                        borderRight={'1px solid #000'}
+                        borderLeft={'1px solid #000'}
+                        borderBottom={'1px solid #000'}
+                      >
+                        {company.place}
+                      </Td>
+                      <Td
+                        fontSize={15}
+                        borderRight={'1px solid #000'}
+                        borderLeft={'1px solid #000'}
+                        borderBottom={'1px solid #000'}
+                      >
+                        {company.Implementation_date}
+                      </Td>
+                      <Td
+                        fontSize={15}
+                        borderRight={'1px solid #000'}
+                        borderLeft={'1px solid #000'}
+                        borderBottom={'1px solid #000'}
+                      >
+                        {company.absence_date}
+                      </Td>
+                      <Td
+                        fontSize={15}
+                        borderRight={'1px solid #000'}
+                        borderLeft={'1px solid #000'}
+                        borderBottom={'1px solid #000'}
+                      >
+                        {company.absence_status}
+                      </Td>
+                      <Td
+                        fontSize={15}
+                        borderRight={'1px solid #000'}
+                        borderLeft={'1px solid #000'}
+                        borderBottom={'1px solid #000'}
+                      >
+                        {company.intermediat_result}
+                      </Td>
                     </Tr>
                   )
                 })}
