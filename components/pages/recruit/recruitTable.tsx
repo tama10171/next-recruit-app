@@ -33,7 +33,7 @@ export const RecruitTable = () => {
   const [user_id, setUser_id] = useState<any | null>(null)
   const [table, setTable] = useState<any[] | null>(null)
   const [full_name, setFullName] = useState('')
-
+  const [class_number, setClass_number] = useState('')
   const [serial_number, setSerial_number] = useState<number>(1)
   const [code, setCode] = useState<number>(0)
   const [name, setName] = useState('')
@@ -166,7 +166,7 @@ export const RecruitTable = () => {
                 fontSize={16}
                 ml={'10px'}
               >
-                CTB20_{full_name}
+                CTB20_{class_number}_{full_name}
               </Box>
             </AccordionButton>
           </h2>
