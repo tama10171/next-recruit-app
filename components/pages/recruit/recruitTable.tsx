@@ -336,6 +336,7 @@ export const RecruitTable = () => {
                         onChange={(e) => {
                           setName(e.target.value)
                         }}
+                        placeholder="例：〇〇株式会社"
                       ></Input>
                     </Td>
                     <Td>
@@ -354,6 +355,7 @@ export const RecruitTable = () => {
                         onChange={(e) => {
                           setAcceptance_date(e.target.value)
                         }}
+                        placeholder="例：2023-01-01"
                       ></Input>
                     </Td>
                     <Td>
@@ -361,6 +363,7 @@ export const RecruitTable = () => {
                         onChange={(e) => {
                           setContent(e.target.value)
                         }}
+                        placeholder="例：一次面接"
                       ></Input>
                     </Td>
                     <Td>
@@ -368,6 +371,7 @@ export const RecruitTable = () => {
                         onChange={(e) => {
                           setPlace(e.target.value)
                         }}
+                        placeholder="例：オンライン"
                       ></Input>
                     </Td>
                     <Td>
@@ -375,6 +379,7 @@ export const RecruitTable = () => {
                         onChange={(e) => {
                           setImplementation_date(e.target.value)
                         }}
+                        placeholder="例：2023-01-31"
                       ></Input>
                     </Td>
                     <Td>
@@ -382,6 +387,7 @@ export const RecruitTable = () => {
                         onChange={(e) => {
                           setAbsence_data(e.target.value)
                         }}
+                        placeholder="例：2023-12-31"
                       ></Input>
                     </Td>
                     <Td>
