@@ -19,7 +19,7 @@ export default function news() {
         >
           <NewsAccordion className="Accordion" />
         </Box>
-        <Link href="/newsAdd" position={'fixed'} bottom={'3%'} right={'10%'}>
+        <Link href="/newsAdd" position={'fixed'} bottom={'3%'} right={'7%'}>
           <Button
             borderRadius={'50%'}
             w={40}

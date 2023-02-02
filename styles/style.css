@@ -53,22 +53,8 @@ html {
   background-color: #ffb800;
 }
 
-.btn {
-  position: relative;
-  background-color: #ffb800;
-  margin: 5%;
-  width: 200px;
-  aspect-ratio: 3/1;
-  height: auto;
-  font-size: 2rem;
-  border-radius: 10px;
-}
-@media screen and (max-width: 768px) {
-  .btn {
-    margin-top: 15%;
-    font-size: 1.8rem;
-    width: 180px;
-  }
+.css-r4358i {
+  padding: 0 !important;
 }
 
 .login_flex {

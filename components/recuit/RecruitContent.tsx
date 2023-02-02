@@ -24,7 +24,10 @@ export const RecruitContent = () => {
   const [users, setUsers] = useState<any[] | null>(null)
 
   const getUserData = async () => {
-    const { data, error } = await supabase.from('profiles').select('*').order('class_number', { ascending: true })
+    const { data, error } = await supabase
+      .from('profiles')
+      .select('*')
+      .order('class_number', { ascending: true })
     if (error) console.log(error)
 
     setUsers(data)
@@ -35,10 +38,10 @@ export const RecruitContent = () => {
   }, [])
 
   return (
-    <Box p={5}>
+    <Box>
       <SubTitle className="sub_title" title="活動一覧" />
 
-      <Accordion allowToggle>
+      <Accordion allowToggle m={'0 5%'}>
         {/* データがあるだけ表示 */}
         {users?.map((user) => {
           return <ListItem key={user.id} user={user} />
@@ -53,7 +56,11 @@ const ListItem = (props: { user: User }) => {
   const [companys, setCompanys] = useState<any[] | null>(null)
 
   const getCompanyData = async () => {
-    const { data, error } = await supabase.from('companyinfo').select('*').eq('user_id', user.id).order('serial_number', { ascending: true })
+    const { data, error } = await supabase
+      .from('companyinfo')
+      .select('*')
+      .eq('user_id', user.id)
+      .order('serial_number', { ascending: true })
     if (error) console.log(error)
     console.log(data)
 
