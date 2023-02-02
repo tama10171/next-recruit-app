@@ -71,7 +71,7 @@ const SignIn = () => {
       <Center h={'calc(100vh)'} display={'flex'} flexDirection={'column'}>
         <VStack w={'100%'}>
           <Box m={'3% 0'} width={{ base: 250, sm: 330 }} height={{ base: 182, sm: 240 }}>
-            <Image className="logo_img" src="/images/logo.png" alt="logo"></Image>
+            <img className="logo_img" src="/images/logo.png" alt="logo" />
           </Box>
           <Box className="login_flex" m={'10px'}>
             <Box className="login_box" bg="white">
