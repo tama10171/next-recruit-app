@@ -24,7 +24,7 @@ export const RecruitContent = () => {
   const [users, setUsers] = useState<any[] | null>(null)
 
   const getUserData = async () => {
-    const { data, error } = await supabase.from('profiles').select('*')
+    const { data, error } = await supabase.from('profiles').select('*').order('class_number', { ascending: true })
     if (error) console.log(error)
 
     setUsers(data)
@@ -53,7 +53,7 @@ const ListItem = (props: { user: User }) => {
   const [companys, setCompanys] = useState<any[] | null>(null)
 
   const getCompanyData = async () => {
-    const { data, error } = await supabase.from('companyinfo').select('*').eq('user_id', user.id)
+    const { data, error } = await supabase.from('companyinfo').select('*').eq('user_id', user.id).order('serial_number', { ascending: true })
     if (error) console.log(error)
     console.log(data)
 
