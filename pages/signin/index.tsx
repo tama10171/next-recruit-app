@@ -18,7 +18,7 @@ import {
 import { useRouter } from 'next/router'
 import { useState } from 'react'
 
-export const SignIn = () => {
+const SignIn = () => {
   const [email, setEmail] = useState('')
   const [schoolNumber, setSchoolNumber] = useState(0)
   const [password, setPassword] = useState('')
@@ -71,7 +71,7 @@ export const SignIn = () => {
       <Center h={'calc(100vh)'} display={'flex'} flexDirection={'column'}>
         <VStack w={'100%'}>
           <Box m={'3% 0'} width={{ base: 250, sm: 330 }} height={{ base: 182, sm: 240 }}>
-            <img className="logo_img" src="/images/logo.png" alt="logo"></img>
+            <Image className="logo_img" src="/images/logo.png" alt="logo"></Image>
           </Box>
           <Box className="login_flex" m={'10px'}>
             <Box className="login_box" bg="white">
@@ -114,3 +114,4 @@ export const SignIn = () => {
     </PageLayout>
   )
 }
+export default SignIn
