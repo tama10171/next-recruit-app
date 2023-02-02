@@ -68,46 +68,47 @@ export const SignIn = () => {
 
   return (
     <PageLayout hasHeader={false}>
-      <Center h={'calc(100vh)'}display={"flex"} flexDirection={"column"}>
-        <VStack w={"100%"}>
-          
-          <Box m={"3% 0"}><Image src="/images/logo.png" width={330} height={240} alt="logo"></Image></Box>
-        <Box className="login_flex" m={"10px"}>
-          <Box className="login_box" bg="white">
-            <HStack className="login_pare">
-              <Text className="login_form">メールアドレス</Text>
-              {/* <Text className="login_form">学籍番号</Text> */}
-              <FormControl isRequired width={'70%'}>
-                <Input
-                  h={'30px'}
-                  bgColor={'#FFFAE8'}
-                  border={'#FFB800 1px solid'}
-                  fontSize={'1.6rem'}
-                  onChange={(e) => {
-                    setEmail(e.target.value)
-                  }}
-                />
-              </FormControl>
-            </HStack>
-            <HStack className="login_pare">
-              <Text className="login_form">パスワード</Text>
-              <FormControl isRequired width={'70%'}>
-                <Input
-                  h={'30px'}
-                  bgColor={'#FFFAE8'}
-                  border={'#FFB800 1px solid'}
-                  fontSize={'1.6rem'}
-                  onChange={(e) => {
-                    setPassword(e.target.value)
-                  }}
-                />
-              </FormControl>
-            </HStack>
+      <Center h={'calc(100vh)'} display={'flex'} flexDirection={'column'}>
+        <VStack w={'100%'}>
+          <Box m={'3% 0'} width={{ base: 250, sm: 330 }} height={{ base: 182, sm: 240 }}>
+            <img className="logo_img" src="/images/logo.png" alt="logo"></img>
           </Box>
-          <Button className="login_btn" onClick={onsubmit}>
-            ログイン
-          </Button>
-        </Box>
+          <Box className="login_flex" m={'10px'}>
+            <Box className="login_box" bg="white">
+              <HStack className="login_pare">
+                <Text className="login_form">メールアドレス</Text>
+                {/* <Text className="login_form">学籍番号</Text> */}
+                <FormControl isRequired width={'70%'}>
+                  <Input
+                    h={'30px'}
+                    bgColor={'#FFFAE8'}
+                    border={'#FFB800 1px solid'}
+                    fontSize={'1.6rem'}
+                    onChange={(e) => {
+                      setEmail(e.target.value)
+                    }}
+                  />
+                </FormControl>
+              </HStack>
+              <HStack className="login_pare">
+                <Text className="login_form">パスワード</Text>
+                <FormControl isRequired width={'70%'}>
+                  <Input
+                    h={'30px'}
+                    bgColor={'#FFFAE8'}
+                    border={'#FFB800 1px solid'}
+                    fontSize={'1.6rem'}
+                    onChange={(e) => {
+                      setPassword(e.target.value)
+                    }}
+                  />
+                </FormControl>
+              </HStack>
+            </Box>
+            <Button className="login_btn" onClick={onsubmit}>
+              ログイン
+            </Button>
+          </Box>
         </VStack>
       </Center>
     </PageLayout>
