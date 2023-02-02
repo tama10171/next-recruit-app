@@ -36,7 +36,7 @@ export const RecruitContent = () => {
 
   return (
     <Box p={5}>
-      <SubTitle className="sub_title" title="グッドJOB INFO" />
+      <SubTitle className="sub_title" title="活動一覧" />
 
       <Accordion allowToggle>
         {/* データがあるだけ表示 */}
@@ -83,7 +83,7 @@ const ListItem = (props: { user: User }) => {
           <TableContainer>
             <Table size="sm">
               <Thead>
-                <Tr bg={'#000'} h={'25px'}>
+                <Tr bg={'#000'} h={'25px'} border={'1px solid #000'}>
                   <Th fontSize={13} color={'#FF9900'}>
                     通番
                   </Th>
