@@ -24,7 +24,7 @@ export const RecruitContent = () => {
   const [users, setUsers] = useState<any[] | null>(null)
 
   const getUserData = async () => {
-    const { data, error } = await supabase.from('profiles').select('*')
+    const { data, error } = await supabase.from('profiles').select('*').order('class_number', { ascending: true })
     if (error) console.log(error)
 
     setUsers(data)
