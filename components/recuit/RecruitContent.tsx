@@ -38,7 +38,7 @@ export const RecruitContent = () => {
   }, [])
 
   return (
-    <Box p={5}>
+    <Box>
       <SubTitle className="sub_title" title="活動一覧" />
 
       <Accordion allowToggle m={'0 5%'}>
