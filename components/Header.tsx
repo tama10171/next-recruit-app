@@ -47,7 +47,7 @@ export const Header = () => {
                 活動一覧
               </Button>
             </Link>
-            <Link href="/">
+            <Link href="/activityChange">
               <Button
                 bg={'#fff'}
                 w={{ base: '58px', sm: '90px' }}
