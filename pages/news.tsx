@@ -19,8 +19,17 @@ export default function news() {
         >
           <NewsAccordion className="Accordion" />
         </Box>
-        <Link href="/newsAdd">
-          <Button>追加</Button>
+        <Link href="/newsAdd" position={'fixed'} bottom={'3%'} right={'10%'}>
+          <Button
+            borderRadius={'50%'}
+            w={40}
+            h={40}
+            bg={'#ffb800'}
+            fontSize={'20px'}
+            _hover={{ bg: '#f0b800' }}
+          >
+            追加
+          </Button>
         </Link>
       </PageLayout>
     </>

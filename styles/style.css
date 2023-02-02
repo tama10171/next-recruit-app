@@ -53,6 +53,24 @@ html {
   background-color: #ffb800;
 }
 
+.btn {
+  position: relative;
+  background-color: #ffb800;
+  margin: 5%;
+  width: 200px;
+  aspect-ratio: 3/1;
+  height: auto;
+  font-size: 2rem;
+  border-radius: 10px;
+}
+@media screen and (max-width: 768px) {
+  .btn {
+    margin-top: 15%;
+    font-size: 1.8rem;
+    width: 180px;
+  }
+}
+
 .login_flex {
   width: 100%;
   height: 100%;
@@ -164,4 +182,11 @@ html {
 
 .Accordion {
   border-collapse: collapse;
+}
+
+.logo_img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
 }/*# sourceMappingURL=style.css.map */
