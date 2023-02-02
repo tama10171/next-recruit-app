@@ -32,6 +32,7 @@ export const RecruitTable = () => {
   const [ user_id, setUser_id ] = useState<any | null>(null)
   const [ table, setTable ] = useState<any[] | null>(null)
   const [ full_name, setFullName ] = useState('')
+  const [ class_number, setClass_number ] = useState('')
 
   const [serial_number, setSerial_number] = useState<number>(1)
   const [code, setCode] = useState<number>(0)
@@ -62,6 +63,7 @@ export const RecruitTable = () => {
       setUser(data)
       data?.map((data: any, index) => {
         setFullName(data.full_name)
+        setClass_number(data.class_number)
       })
     }
       
@@ -152,7 +154,7 @@ export const RecruitTable = () => {
             <AccordionButton>
               <AccordionIcon />
               <Box as="span" flex="1" textAlign="left" fontWeight={'bold'} fontSize={12}>
-                CTB20_{full_name}
+                CTB20_{class_number}_{full_name}
               </Box>
             </AccordionButton>
           </h2>

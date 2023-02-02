@@ -72,7 +72,7 @@ const ListItem = (props: { user: User }) => {
         <AccordionButton p={'10px'}>
           <AccordionIcon />
           <Box as="span" flex="1" textAlign="left" fontWeight={'bold'} fontSize={16} ml={'10px'}>
-            CTB20_{user.full_name}
+            CTB20_{user.class_number}_{user.full_name}
           </Box>
         </AccordionButton>
       </h2>
