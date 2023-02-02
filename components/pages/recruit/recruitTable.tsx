@@ -34,7 +34,6 @@ export const RecruitTable = () => {
   const [table, setTable] = useState<any[] | null>(null)
   const [full_name, setFullName] = useState('')
   const [class_number, setClass_number] = useState('')
-  const [class_number, setClass_number] = useState('')
   const [serial_number, setSerial_number] = useState<number>(1)
   const [code, setCode] = useState<number>(0)
   const [name, setName] = useState('')
