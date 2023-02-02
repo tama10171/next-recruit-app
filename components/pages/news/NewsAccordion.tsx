@@ -17,7 +17,7 @@ export const NewsAccordion = (props: any) => {
 
   const newsData = async () => {
     let { data, error } = await supabase.from('news').select('*')
-
+    data?.reverse()
     setNews(data)
 
     console.log(data)
@@ -25,6 +25,7 @@ export const NewsAccordion = (props: any) => {
 
   useEffect(() => {
     newsData()
+    console.log(news)
   }, [])
 
   return (
@@ -63,6 +64,7 @@ export const NewsAccordion = (props: any) => {
                 borderRadius={'10px'}
                 padding={'2%'}
                 mb={'2%'}
+                fontSize={'18px'}
                 // borderBottom={index + 1 === news.length ? '#ffb800 1px solid' : ''}
               >
                 {m.description}
