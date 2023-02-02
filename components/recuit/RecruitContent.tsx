@@ -53,7 +53,7 @@ const ListItem = (props: { user: User }) => {
   const [companys, setCompanys] = useState<any[] | null>(null)
 
   const getCompanyData = async () => {
-    const { data, error } = await supabase.from('companyinfo').select('*').eq('user_id', user.id)
+    const { data, error } = await supabase.from('companyinfo').select('*').eq('user_id', user.id).order('serial_number', { ascending: true })
     if (error) console.log(error)
     console.log(data)
 
