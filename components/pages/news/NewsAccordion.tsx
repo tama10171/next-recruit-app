@@ -8,6 +8,7 @@ import {
   AccordionButtonProps,
   HStack,
   Flex,
+  Textarea,
 } from '@chakra-ui/react'
 import { supabase } from '@/libs/supabaseClient'
 import { useEffect, useState } from 'react'
@@ -47,7 +48,7 @@ export const NewsAccordion = (props: any) => {
                         {m.created_at}
                       </Box>
                       <Box
-                        whiteSpace={'nowrap'}
+                        // whiteSpace={'nowrap'}
                         fontSize={{ base: '13px', md: '15px' }}
                         fontWeight={'bold'}
                       >
@@ -58,16 +59,21 @@ export const NewsAccordion = (props: any) => {
                   <AccordionIcon />
                 </AccordionButton>
               </h2>
-              <AccordionPanel
-                p={'15px 5px'}
-                bg={'#FFFAE8'}
-                borderRadius={'10px'}
-                padding={'2%'}
-                mb={'2%'}
-                fontSize={'18px'}
-                // borderBottom={index + 1 === news.length ? '#ffb800 1px solid' : ''}
-              >
-                {m.description}
+              <AccordionPanel>
+                <Textarea
+                  isDisabled
+                  opacity={'1!important'}
+                  placeholder={m.description}
+                  color={'#000'}
+                  p={'15px 5px'}
+                  bg={'#FFFAE8'}
+                  borderRadius={'10px'}
+                  padding={'2%'}
+                  h={'300px'}
+                  mb={'2%'}
+                  fontSize={{ base: '14px', md: '16px' }}
+                  _placeholder={{ color: 'black' }} // borderBottom={index + 1 === news.length ? '#ffb800 1px solid' : ''}
+                />
               </AccordionPanel>
             </AccordionItem>
           )
