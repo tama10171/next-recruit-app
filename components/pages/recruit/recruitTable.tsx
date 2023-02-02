@@ -160,7 +160,7 @@ export const RecruitTable = () => {
             <AccordionButton p={'10px'}>
               <AccordionIcon />
               <Box as="span" flex="1" textAlign="left" fontWeight={'bold'} fontSize={12}>
-                CTB20_{full_name}
+                CTB20_{class_number}_{full_name}
               </Box>
             </AccordionButton>
           </h2>
