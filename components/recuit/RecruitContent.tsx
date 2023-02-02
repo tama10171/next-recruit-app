@@ -79,7 +79,7 @@ const ListItem = (props: { user: User }) => {
         <AccordionButton p={'10px'}>
           <AccordionIcon />
           <Box as="span" flex="1" textAlign="left" fontWeight={'bold'} fontSize={16} ml={'10px'}>
-            CTB20_{user.full_name}
+            CTB20_{user.class_number}_{user.full_name}
           </Box>
         </AccordionButton>
       </h2>
@@ -160,7 +160,8 @@ const ListItem = (props: { user: User }) => {
                         borderLeft={'1px solid #000'}
                         borderBottom={'1px solid #000'}
                       >
-                        {company.result}
+                        {/* {company.result} */}
+                        {company.result==true? "合格" : company.result==false? "不合格":""}
                       </Td>
                       <Td
                         fontSize={15}
@@ -208,7 +209,8 @@ const ListItem = (props: { user: User }) => {
                         borderLeft={'1px solid #000'}
                         borderBottom={'1px solid #000'}
                       >
-                        {company.absence_status}
+                        {/* {company.absence_status} */}
+                        {company.absence_status==true? "許可" : company.absence_status==false? "不許可":""}
                       </Td>
                       <Td
                         fontSize={15}
@@ -216,7 +218,8 @@ const ListItem = (props: { user: User }) => {
                         borderLeft={'1px solid #000'}
                         borderBottom={'1px solid #000'}
                       >
-                        {company.intermediat_result}
+                        {/* {company.intermediate_result} */}
+                        {company.intermediate_result==true? "合格" : company.intermediate_result==false? "不合格":""}
                       </Td>
                     </Tr>
                   )
