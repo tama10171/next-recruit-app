@@ -111,6 +111,13 @@ export const RecruitTable = () => {
             })
             .eq('user_id', user_id)
             .eq('serial_number', index + 1)
+          console.log(data)
+          console.log(error)
+          if (error == null) {
+            alert('通番：' + td.serial_number + ' の更新成功！')
+          } else {
+            alert('通番：' + td.serial_number + ' の更新失敗')
+          }
         })
       )
     }
@@ -147,6 +154,12 @@ export const RecruitTable = () => {
       }
 
       let { data, error } = await supabase.from('companyinfo').insert([updates])
+      console.log(error)
+      if (error == null) {
+        alert('追加成功！')
+      } else {
+        alert('追加失敗\n\n「最終結果 内定承諾提出日 公欠状態 結果」\n以外を入力してください')
+      }
       tableData()
     }
   }

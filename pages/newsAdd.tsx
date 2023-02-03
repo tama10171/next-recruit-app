@@ -33,6 +33,12 @@ export default function NewsAdd() {
 
     let { data, error } = await supabase.from('news').insert([updates])
 
+    if (error == null) {
+      alert('追加成功！')
+    } else {
+      alert('追加失敗')
+    }
+
     console.log(data)
     if (error) console.log(error)
   }
