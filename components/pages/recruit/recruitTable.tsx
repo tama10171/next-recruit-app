@@ -38,7 +38,7 @@ export const RecruitTable = () => {
   const [code, setCode] = useState<number>(0)
   const [name, setName] = useState('')
   const [result, setResult] = useState<Boolean>()
-  const [acceptance_date, setAcceptance_date] = useState('')
+  const [acceptance_date, setAcceptance_date] = useState<String>()
   // const [acceptance_date, setAcceptance_date] = useState<Date>()
   const [content, setContent] = useState('')
   const [place, setPlace] = useState('')
@@ -121,7 +121,7 @@ export const RecruitTable = () => {
       serial_number == 0 ||
       code == 0 ||
       name == '' ||
-      acceptance_date == null ||
+      // acceptance_date == null ||
       content == '' ||
       place == '' ||
       Implementation_date == null ||
