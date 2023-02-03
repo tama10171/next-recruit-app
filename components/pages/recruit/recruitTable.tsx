@@ -113,6 +113,11 @@ export const RecruitTable = () => {
             .eq('serial_number', index + 1)
           console.log(data)
           console.log(error)
+          if (error == null) {
+            alert('通番：' + td.serial_number + ' の更新成功！')
+          } else {
+            alert('通番：' + td.serial_number + ' の更新失敗')
+          }
         })
       )
     }
