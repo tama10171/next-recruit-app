@@ -172,7 +172,14 @@ export const RecruitTable = () => {
           <h2>
             <AccordionButton p={'10px'}>
               <AccordionIcon />
-              <Box as="span" flex="1" textAlign="left" fontWeight={'bold'} fontSize={12}>
+              <Box
+                as="span"
+                flex="1"
+                textAlign="left"
+                fontWeight={'bold'}
+                fontSize={16}
+                ml={'10px'}
+              >
                 CTB20_{class_number}_{full_name}
               </Box>
             </AccordionButton>

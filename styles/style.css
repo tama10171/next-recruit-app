@@ -97,7 +97,7 @@ html {
 }
 @media screen and (max-width: 768px) {
   .login_flex .login_box .login_form {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
   }
 }
 .login_flex .login_btn {

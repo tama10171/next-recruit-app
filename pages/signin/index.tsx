@@ -76,7 +76,9 @@ const SignIn = () => {
           <Box className="login_flex" m={'10px'}>
             <Box className="login_box" bg="white">
               <HStack className="login_pare">
-                <Text className="login_form">メールアドレス</Text>
+                <Text className="login_form" whiteSpace={'nowrap'} w={'120px'}>
+                  メールアドレス
+                </Text>
                 {/* <Text className="login_form">学籍番号</Text> */}
                 <FormControl isRequired width={'70%'}>
                   <Input

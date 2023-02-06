@@ -161,7 +161,7 @@ const ListItem = (props: { user: User }) => {
                         borderBottom={'1px solid #000'}
                       >
                         {/* {company.result} */}
-                        {company.result==true? "合格" : company.result==false? "不合格":""}
+                        {company.result == true ? '合格' : company.result == false ? '不合格' : ''}
                       </Td>
                       <Td
                         fontSize={15}
@@ -210,7 +210,11 @@ const ListItem = (props: { user: User }) => {
                         borderBottom={'1px solid #000'}
                       >
                         {/* {company.absence_status} */}
-                        {company.absence_status==true? "許可" : company.absence_status==false? "不許可":""}
+                        {company.absence_status == true
+                          ? '許可'
+                          : company.absence_status == false
+                          ? '不許可'
+                          : ''}
                       </Td>
                       <Td
                         fontSize={15}
@@ -219,7 +223,11 @@ const ListItem = (props: { user: User }) => {
                         borderBottom={'1px solid #000'}
                       >
                         {/* {company.intermediate_result} */}
-                        {company.intermediate_result==true? "合格" : company.intermediate_result==false? "不合格":""}
+                        {company.intermediate_result == true
+                          ? '合格'
+                          : company.intermediate_result == false
+                          ? '不合格'
+                          : ''}
                       </Td>
                     </Tr>
                   )
