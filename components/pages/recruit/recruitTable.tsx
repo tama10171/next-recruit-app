@@ -79,7 +79,7 @@ export const RecruitTable = () => {
       console.log(data)
       if (error) console.log(error)
       setTable(data)
-      if (table) setSerial_number(5)
+      // if (table) setSerial_number(5)
     }
     console.log(serial_number)
   }
@@ -190,9 +190,15 @@ export const RecruitTable = () => {
           </h2>
           <AccordionPanel pb={4}>
             <TableContainer>
-              <Table size="sm">
-                <Thead>
-                  <Tr bg={'#000'} h={'25px'} border={'1px solid #000'}>
+              <Table size="md">
+                <Tbody>
+                  <Tr bg={'#ffb800'} h={50} border={'3px solid black'}>
+                    <Td fontWeight={'bold'} colSpan={11} fontSize={'18px'}>
+                      ▼ 変更
+                    </Td>
+                  </Tr>
+                  {/* 更新 */}
+                  <Tr bg={'#000'} h={'25px'} border={'3px solid #000'}>
                     <Th fontSize={13} color={'#FF9900'}>
                       通番
                     </Th>
@@ -227,9 +233,6 @@ export const RecruitTable = () => {
                       結果
                     </Th>
                   </Tr>
-                </Thead>
-                <Tbody>
-                  {/* 更新 */}
                   {table?.map((data: any, index) => {
                     if (count <= index + 1) count++
                     return (
@@ -451,8 +454,53 @@ export const RecruitTable = () => {
                         </Td>
                       </Tr>
                     )
-                  })}
+                  })}{' '}
                   {/* 追加 */}
+                  <Tr h={'20px'}>
+                    <Td></Td>
+                  </Tr>
+                  <Tr h={50} fontSize={'18px'} border={'3px solid black'}>
+                    <Td fontWeight={'bold'} colSpan={11} bg={'#ffb800'}>
+                      ▼ 登録
+                    </Td>
+                  </Tr>
+                  {/* <Thead> */}
+                  <Tr bg={'#000'} h={'25px'} border={'3px solid #000'}>
+                    <Th fontSize={13} color={'#FF9900'}>
+                      通番
+                    </Th>
+                    <Th fontSize={13} color={'#FF9900'}>
+                      企業コード
+                    </Th>
+                    <Th fontSize={13} color={'#FF9900'}>
+                      企業名
+                    </Th>
+                    <Th fontSize={13} color={'#FF9900'}>
+                      最終結果
+                    </Th>
+                    <Th fontSize={13} color={'#FF9900'}>
+                      内定承諾提出日
+                    </Th>
+                    <Th fontSize={13} color={'#FF9900'}>
+                      活動内容
+                    </Th>
+                    <Th fontSize={13} color={'#FF9900'}>
+                      場所
+                    </Th>
+                    <Th fontSize={13} color={'#FF9900'}>
+                      実施日
+                    </Th>
+                    <Th fontSize={13} color={'#FF9900'}>
+                      公欠提出日
+                    </Th>
+                    <Th fontSize={13} color={'#FF9900'}>
+                      公欠状態
+                    </Th>
+                    <Th fontSize={13} color={'#FF9900'}>
+                      結果
+                    </Th>
+                  </Tr>
+                  {/* </Thead> */}
                   <Tr>
                     <Td>{count}</Td>
                     <Td>
@@ -583,7 +631,7 @@ export const RecruitTable = () => {
         bottom={'3%'}
         right={'7%'}
       >
-        変更
+        保存
       </Button>
     </>
   )
