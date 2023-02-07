@@ -38,12 +38,12 @@ export const RecruitTable = () => {
   const [code, setCode] = useState<number>(0)
   const [name, setName] = useState('')
   const [result, setResult] = useState<Boolean | null>()
-  const [acceptance_date, setAcceptance_date] = useState<String>()
+  const [acceptance_date, setAcceptance_date] = useState<String | null>()
   // const [acceptance_date, setAcceptance_date] = useState<Date>()
   const [content, setContent] = useState('')
   const [place, setPlace] = useState('')
-  const [Implementation_date, setImplementation_date] = useState<String>()
-  const [absence_date, setAbsence_data] = useState<String>()
+  const [Implementation_date, setImplementation_date] = useState<String | null>()
+  const [absence_date, setAbsence_data] = useState<String | null>()
   const [absence_status, setAbsence_status] = useState<Boolean | null>()
   const [intermediate_result, setIntermediate_result] = useState<Boolean | null>()
 
@@ -295,9 +295,9 @@ export const RecruitTable = () => {
                         <Td>
                           <Input
                             onChange={(e) => {
-                              data.acceptance_date = e.target.value
+                              data.acceptance_date = e.target.value != '' ? e.target.value : null
                             }}
-                            placeholder={data.acceptance_date}
+                            placeholder={data.acceptance_date == null ? '' : data.acceptance_date}
                           ></Input>
                         </Td>
                         <Td>
@@ -319,7 +319,8 @@ export const RecruitTable = () => {
                         <Td>
                           <Input
                             onChange={(e) => {
-                              data.Implementation_date = e.target.value
+                              data.Implementation_date =
+                                e.target.value != '' ? e.target.value : null
                             }}
                             placeholder={data.Implementation_date}
                           ></Input>
@@ -327,7 +328,7 @@ export const RecruitTable = () => {
                         <Td>
                           <Input
                             onChange={(e) => {
-                              data.absence_date = e.target.value
+                              data.absence_date = e.target.value != '' ? e.target.value : null
                             }}
                             placeholder={data.absence_date}
                           ></Input>
@@ -496,7 +497,7 @@ export const RecruitTable = () => {
                     <Td>
                       <Input
                         onChange={(e) => {
-                          setAcceptance_date(e.target.value)
+                          setAcceptance_date(e.target.value != '' ? e.target.value : null)
                         }}
                         placeholder="例：2023-01-01"
                       ></Input>
@@ -520,7 +521,7 @@ export const RecruitTable = () => {
                     <Td>
                       <Input
                         onChange={(e) => {
-                          setImplementation_date(e.target.value)
+                          setImplementation_date(e.target.value != '' ? e.target.value : null)
                         }}
                         placeholder="例：2023-01-31"
                       ></Input>
@@ -528,7 +529,7 @@ export const RecruitTable = () => {
                     <Td>
                       <Input
                         onChange={(e) => {
-                          setAbsence_data(e.target.value)
+                          setAbsence_data(e.target.value != '' ? e.target.value : null)
                         }}
                         placeholder="例：2023-12-31"
                       ></Input>
