@@ -21,8 +21,8 @@ import { PageLayout } from '../components/layouts/PageLayout'
 // export const NewsAdd = (props: any) => {
 export default function NewsAdd() {
   // const [date, setDate] = useState('')
-  const [title, setTitle] = useState('')
-  const [contents, setContents] = useState('')
+  const [title, setTitle] = useState<String>()
+  const [contents, setContents] = useState<String>()
 
   const newsData = async () => {
     const updates = {
@@ -36,7 +36,7 @@ export default function NewsAdd() {
     if (error == null) {
       alert('追加成功！')
     } else {
-      alert('追加失敗')
+      alert('追加失敗\n\n「タイトル 内容」を入力してください')
     }
 
     console.log(data)
