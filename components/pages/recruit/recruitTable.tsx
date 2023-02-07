@@ -42,8 +42,8 @@ export const RecruitTable = () => {
   // const [acceptance_date, setAcceptance_date] = useState<Date>()
   const [content, setContent] = useState('')
   const [place, setPlace] = useState('')
-  const [Implementation_date, setImplementation_date] = useState('')
-  const [absence_date, setAbsence_data] = useState('')
+  const [Implementation_date, setImplementation_date] = useState<String>()
+  const [absence_date, setAbsence_data] = useState<String>()
   const [absence_status, setAbsence_status] = useState<Boolean | null>()
   const [intermediate_result, setIntermediate_result] = useState<Boolean | null>()
 
