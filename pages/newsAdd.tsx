@@ -36,7 +36,7 @@ export default function NewsAdd() {
     if (error == null) {
       alert('追加成功！')
     } else {
-      alert('追加失敗')
+      alert('追加失敗\n\n「タイトル 内容」を入力してください')
     }
 
     console.log(data)
