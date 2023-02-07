@@ -363,7 +363,11 @@ export const RecruitTable = () => {
                       <Select
                         placeholder=" "
                         onChange={(e) => {
-                          setResult(e.target.value === '合格')
+                          if (e.target.value == '') {
+                            setResult(null)
+                          } else {
+                            setResult(e.target.value === '合格')
+                          }
                         }}
                       >
                         <option value="合格">合格</option>
@@ -414,7 +418,11 @@ export const RecruitTable = () => {
                       <Select
                         placeholder=" "
                         onChange={(e) => {
-                          setAbsence_status(e.target.value === '許可')
+                          if (e.target.value == '') {
+                            setAbsence_status(null)
+                          } else {
+                            setAbsence_status(e.target.value === '許可')
+                          }
                         }}
                       >
                         <option value="許可">許可</option>
@@ -425,7 +433,11 @@ export const RecruitTable = () => {
                       <Select
                         placeholder=" "
                         onChange={(e) => {
-                          setIntermediate_result(e.target.value === '合格')
+                          if (e.target.value == '') {
+                            setIntermediate_result(null)
+                          } else {
+                            setIntermediate_result(e.target.value === '合格')
+                          }
                         }}
                       >
                         <option value="合格">合格</option>
