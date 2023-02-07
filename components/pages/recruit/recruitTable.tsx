@@ -158,7 +158,7 @@ export const RecruitTable = () => {
       if (error == null) {
         alert('追加成功！')
       } else {
-        alert('追加失敗\n\n「最終結果 内定承諾提出日 公欠状態 結果」\n以外を入力してください')
+        alert('追加失敗\n\n日付を正しく入力してください')
       }
       tableData()
     }
