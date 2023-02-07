@@ -256,13 +256,35 @@ export const RecruitTable = () => {
                         </Td>
                         <Td>
                           <Select
-                            placeholder={data.result ? '合格' : '不合格'}
                             onChange={(e) => {
-                              data.result = e.target.value === '合格'
+                              data.result =
+                                e.target.value === '合格'
+                                  ? true
+                                  : e.target.value === '不合格'
+                                  ? false
+                                  : null
                             }}
                           >
-                            <option value={data.result ? '不合格' : '合格'}>
-                              {data.result ? '不合格' : '合格'}
+                            <option
+                              value={
+                                data.result == true ? '合格' : data.result == false ? '不合格' : ' '
+                              }
+                            >
+                              {data.result == true ? '合格' : data.result == false ? '不合格' : ' '}
+                            </option>
+                            <option
+                              value={
+                                data.result == null ? '合格' : data.result == true ? '不合格' : ' '
+                              }
+                            >
+                              {data.result == null ? '合格' : data.result == true ? '不合格' : ' '}
+                            </option>
+                            <option
+                              value={
+                                data.result == null ? '不合格' : data.result == false ? '合格' : ' '
+                              }
+                            >
+                              {data.result == null ? '不合格' : data.result == false ? '合格' : ' '}
                             </option>
                           </Select>
                         </Td>
@@ -308,25 +330,118 @@ export const RecruitTable = () => {
                         </Td>
                         <Td>
                           <Select
-                            placeholder={data.absence_status ? '許可' : '不許可'}
                             onChange={(e) => {
-                              data.absence_status = e.target.value === '許可'
+                              data.absence_status =
+                                e.target.value === '許可'
+                                  ? true
+                                  : e.target.value === '不許可'
+                                  ? false
+                                  : null
+                              console.log(data.absence_status)
                             }}
                           >
-                            <option value={data.absence_status ? '不許可' : '許可'}>
-                              {data.absence_status ? '不許可' : '許可'}
+                            <option
+                              value={
+                                data.absence_status == true
+                                  ? '許可'
+                                  : data.absence_status == false
+                                  ? '不許可'
+                                  : ' '
+                              }
+                            >
+                              {data.absence_status == true
+                                ? '許可'
+                                : data.absence_status == false
+                                ? '不許可'
+                                : ' '}
+                            </option>
+                            <option
+                              value={
+                                data.absence_status == null
+                                  ? '許可'
+                                  : data.absence_status == true
+                                  ? '不許可'
+                                  : ' '
+                              }
+                            >
+                              {data.absence_status == null
+                                ? '許可'
+                                : data.absence_status == true
+                                ? '不許可'
+                                : ' '}
+                            </option>
+                            <option
+                              value={
+                                data.absence_status == null
+                                  ? '不許可'
+                                  : data.absence_status == false
+                                  ? '許可'
+                                  : ' '
+                              }
+                            >
+                              {data.absence_status == null
+                                ? '不許可'
+                                : data.absence_status == false
+                                ? '許可'
+                                : ' '}
                             </option>
                           </Select>
                         </Td>
                         <Td>
                           <Select
-                            placeholder={data.intermediate_result ? '合格' : '不合格'}
                             onChange={(e) => {
-                              data.intermediate_result = e.target.value === '合格'
+                              data.intermediate_result =
+                                e.target.value === '合格'
+                                  ? true
+                                  : e.target.value === '不合格'
+                                  ? false
+                                  : null
                             }}
                           >
-                            <option value={data.intermediate_result ? '不合格' : '合格'}>
-                              {data.intermediate_result ? '不合格' : '合格'}
+                            <option
+                              value={
+                                data.intermediate_result == true
+                                  ? '合格'
+                                  : data.intermediate_result == false
+                                  ? '不合格'
+                                  : ' '
+                              }
+                            >
+                              {data.intermediate_result == true
+                                ? '合格'
+                                : data.intermediate_result == false
+                                ? '不合格'
+                                : ' '}
+                            </option>
+                            <option
+                              value={
+                                data.intermediate_result == null
+                                  ? '合格'
+                                  : data.intermediate_result == true
+                                  ? '不合格'
+                                  : ' '
+                              }
+                            >
+                              {data.intermediate_result == null
+                                ? '合格'
+                                : data.intermediate_result == true
+                                ? '不合格'
+                                : ' '}
+                            </option>
+                            <option
+                              value={
+                                data.intermediate_result == null
+                                  ? '不合格'
+                                  : data.intermediate_result == false
+                                  ? '合格'
+                                  : ' '
+                              }
+                            >
+                              {data.intermediate_result == null
+                                ? '不合格'
+                                : data.intermediate_result == false
+                                ? '合格'
+                                : ' '}
                             </option>
                           </Select>
                         </Td>
