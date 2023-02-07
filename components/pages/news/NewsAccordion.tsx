@@ -17,7 +17,10 @@ export const NewsAccordion = (props: any) => {
   const [news, setNews] = useState<any[] | null>(null)
 
   const newsData = async () => {
-    let { data, error } = await supabase.from('news').select('*')
+    let { data, error } = await supabase
+      .from('news')
+      .select('*')
+      .order('created_at', { ascending: true })
     data?.reverse()
     setNews(data)
 
