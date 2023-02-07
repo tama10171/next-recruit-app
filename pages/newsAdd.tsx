@@ -21,8 +21,8 @@ import { PageLayout } from '../components/layouts/PageLayout'
 // export const NewsAdd = (props: any) => {
 export default function NewsAdd() {
   // const [date, setDate] = useState('')
-  const [title, setTitle] = useState('')
-  const [contents, setContents] = useState('')
+  const [title, setTitle] = useState<String>()
+  const [contents, setContents] = useState<String>()
 
   const newsData = async () => {
     const updates = {
