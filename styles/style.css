@@ -69,8 +69,8 @@ html {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 70%;
-  max-width: 700px;
+  width: 80%;
+  max-width: 800px;
   aspect-ratio: 6/2;
   padding: 3% 7%;
   border-radius: 15px;
@@ -91,12 +91,13 @@ html {
   text-align: center;
   font-weight: bold;
   max-width: 1000px;
-  width: 30%;
+  width: 160px;
   display: flex;
   justify-content: space-between;
 }
 @media screen and (max-width: 768px) {
   .login_flex .login_box .login_form {
+    width: 130px;
     font-size: 1.3rem;
   }
 }
