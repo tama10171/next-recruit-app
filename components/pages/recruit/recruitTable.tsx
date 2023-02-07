@@ -37,15 +37,15 @@ export const RecruitTable = () => {
   const [serial_number, setSerial_number] = useState<number>(1)
   const [code, setCode] = useState<number>(0)
   const [name, setName] = useState('')
-  const [result, setResult] = useState<Boolean>()
+  const [result, setResult] = useState<Boolean | null>()
   const [acceptance_date, setAcceptance_date] = useState<String>()
   // const [acceptance_date, setAcceptance_date] = useState<Date>()
   const [content, setContent] = useState('')
   const [place, setPlace] = useState('')
   const [Implementation_date, setImplementation_date] = useState('')
   const [absence_date, setAbsence_data] = useState('')
-  const [absence_status, setAbsence_status] = useState<Boolean>()
-  const [intermediate_result, setIntermediate_result] = useState<Boolean>()
+  const [absence_status, setAbsence_status] = useState<Boolean | null>()
+  const [intermediate_result, setIntermediate_result] = useState<Boolean | null>()
 
   let count = 1
 
