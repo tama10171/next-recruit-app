@@ -135,8 +135,8 @@ export const RecruitTable = () => {
       // acceptance_date == null ||
       content == '' ||
       place == '' ||
-      Implementation_date == null ||
-      absence_date == null
+      Implementation_date == null
+      // || absence_date == null
     ) {
       console.log('not insert')
     } else {
