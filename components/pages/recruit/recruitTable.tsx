@@ -497,7 +497,7 @@ export const RecruitTable = () => {
                     <Td>
                       <Input
                         onChange={(e) => {
-                          setAcceptance_date(e.target.value)
+                          setAcceptance_date(e.target.value != '' ? e.target.value : null)
                         }}
                         placeholder="例：2023-01-01"
                       ></Input>
@@ -521,7 +521,7 @@ export const RecruitTable = () => {
                     <Td>
                       <Input
                         onChange={(e) => {
-                          setImplementation_date(e.target.value)
+                          setImplementation_date(e.target.value != '' ? e.target.value : null)
                         }}
                         placeholder="例：2023-01-31"
                       ></Input>
@@ -529,7 +529,7 @@ export const RecruitTable = () => {
                     <Td>
                       <Input
                         onChange={(e) => {
-                          setAbsence_data(e.target.value)
+                          setAbsence_data(e.target.value != '' ? e.target.value : null)
                         }}
                         placeholder="例：2023-12-31"
                       ></Input>
