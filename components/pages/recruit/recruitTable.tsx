@@ -91,6 +91,7 @@ export const RecruitTable = () => {
   const upDate = async () => {
     // 更新
     if (table) {
+      let log = ''
       const postData = await Promise.all(
         table.map(async (td: any, index) => {
           let { data, error } = await supabase
@@ -114,12 +115,15 @@ export const RecruitTable = () => {
           console.log(data)
           console.log(error)
           if (error == null) {
-            alert('通番：' + td.serial_number + ' の更新成功！')
+            log += '通番：' + td.serial_number + ' の更新成功！\n'
           } else {
-            alert('通番：' + td.serial_number + ' の更新失敗')
+            log += '通番：' + td.serial_number + ' の更新失敗\n'
           }
         })
       )
+      if (log != '') {
+        alert(log)
+      }
     }
 
     console.log(serial_number)
