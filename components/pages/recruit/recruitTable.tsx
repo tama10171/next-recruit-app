@@ -81,6 +81,7 @@ export const RecruitTable = () => {
       if (error) console.log(error)
       setTable(data)
     }
+    setSerial_number(serial_number + 1)
     flg = false
     console.log(serial_number)
   }
