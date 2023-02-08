@@ -174,7 +174,7 @@ export const RecruitTable = () => {
   return (
     <>
       <SubTitle className="sub_title" title="活動登録・変更" />
-      <Accordion allowMultiple m={'0 5%'}>
+      <Accordion allowMultiple m={'0 5% 10% 5%'}>
         <AccordionItem background={'#fff'} color={'#000'} fontSize={16}>
           <h2>
             <AccordionButton p={'10px'}>
