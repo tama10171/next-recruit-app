@@ -12,6 +12,7 @@ export default function news() {
           pos={'relative'}
           borderRadius={'20px'}
           w={{ base: '95%', md: '80%' }}
+          maxWidth={'1200px'}
           background={'#fff'}
           m={'0 auto 200px auto'}
           p={'3% 5% 5%'}

@@ -59,6 +59,7 @@ export default function NewsAdd() {
           <Box
             borderRadius={'20px'}
             w={{ base: '97%', sm: '80%' }}
+            maxWidth={'1200px'}
             bg={'#fff'}
             p={{ base: '20% 5%', sm: '5% 5% 2% 5%' }}
             m={'auto'}
