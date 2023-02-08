@@ -47,6 +47,7 @@ export const RecruitTable = () => {
   const [absence_status, setAbsence_status] = useState<Boolean | null>()
   const [intermediate_result, setIntermediate_result] = useState<Boolean | null>()
 
+  let flg = false
   let count = 1
 
   const tableData = async () => {
@@ -79,8 +80,8 @@ export const RecruitTable = () => {
       console.log(data)
       if (error) console.log(error)
       setTable(data)
-      if (table) setSerial_number(5)
     }
+    flg = false
     console.log(serial_number)
   }
 
@@ -90,39 +91,41 @@ export const RecruitTable = () => {
 
   const upDate = async () => {
     // 更新
-    if (table) {
-      let log = ''
-      const postData = await Promise.all(
-        table.map(async (td: any, index) => {
-          let { data, error } = await supabase
-            .from('companyinfo')
-            .update({
-              // serial_number: td.serial_number,
-              // user_id: user_id,
-              code: td.code,
-              name: td.name,
-              result: td.result,
-              acceptance_date: td.acceptance_date,
-              content: td.content,
-              place: td.place,
-              Implementation_date: td.Implementation_date,
-              absence_date: td.absence_date,
-              absence_status: td.absence_status,
-              intermediate_result: td.intermediate_result,
-            })
-            .eq('user_id', user_id)
-            .eq('serial_number', index + 1)
-          console.log(data)
-          console.log(error)
-          if (error == null) {
-            log += '通番：' + td.serial_number + ' の更新成功！\n'
-          } else {
-            log += '通番：' + td.serial_number + ' の更新失敗\n'
-          }
-        })
-      )
-      if (log != '') {
-        alert(log)
+    if (flg) {
+      if (table) {
+        let log = ''
+        const postData = await Promise.all(
+          table.map(async (td: any, index) => {
+            let { data, error } = await supabase
+              .from('companyinfo')
+              .update({
+                // serial_number: td.serial_number,
+                // user_id: user_id,
+                code: td.code,
+                name: td.name,
+                result: td.result,
+                acceptance_date: td.acceptance_date,
+                content: td.content,
+                place: td.place,
+                Implementation_date: td.Implementation_date,
+                absence_date: td.absence_date,
+                absence_status: td.absence_status,
+                intermediate_result: td.intermediate_result,
+              })
+              .eq('user_id', user_id)
+              .eq('serial_number', index + 1)
+            console.log(data)
+            console.log(error)
+            if (error == null) {
+              log += '通番：' + td.serial_number + ' の更新成功！\n'
+            } else {
+              log += '通番：' + td.serial_number + ' の更新失敗\n'
+            }
+          })
+        )
+        if (log != '') {
+          alert(log)
+        }
       }
     }
 
@@ -164,8 +167,8 @@ export const RecruitTable = () => {
       } else {
         alert('追加失敗\n\n日付を正しく入力してください')
       }
-      tableData()
     }
+    tableData()
   }
 
   return (
@@ -241,6 +244,7 @@ export const RecruitTable = () => {
                             min={0}
                             onChange={(e) => {
                               data.code = parseInt(e.valueOf())
+                              flg = true
                             }}
                           >
                             <NumberInputField />
@@ -254,6 +258,7 @@ export const RecruitTable = () => {
                           <Input
                             onChange={(e) => {
                               data.name = e.target.value
+                              flg = true
                             }}
                             placeholder={data.name}
                           ></Input>
@@ -267,6 +272,7 @@ export const RecruitTable = () => {
                                   : e.target.value === '不合格'
                                   ? false
                                   : null
+                              flg = true
                             }}
                           >
                             <option
@@ -296,6 +302,7 @@ export const RecruitTable = () => {
                           <Input
                             onChange={(e) => {
                               data.acceptance_date = e.target.value != '' ? e.target.value : null
+                              flg = true
                             }}
                             placeholder={data.acceptance_date == null ? '' : data.acceptance_date}
                           ></Input>
@@ -304,6 +311,7 @@ export const RecruitTable = () => {
                           <Input
                             onChange={(e) => {
                               data.content = e.target.value
+                              flg = true
                             }}
                             placeholder={data.content}
                           ></Input>
@@ -312,6 +320,7 @@ export const RecruitTable = () => {
                           <Input
                             onChange={(e) => {
                               data.place = e.target.value
+                              flg = true
                             }}
                             placeholder={data.place}
                           ></Input>
@@ -321,6 +330,7 @@ export const RecruitTable = () => {
                             onChange={(e) => {
                               data.Implementation_date =
                                 e.target.value != '' ? e.target.value : null
+                              flg = true
                             }}
                             placeholder={data.Implementation_date}
                           ></Input>
@@ -329,6 +339,7 @@ export const RecruitTable = () => {
                           <Input
                             onChange={(e) => {
                               data.absence_date = e.target.value != '' ? e.target.value : null
+                              flg = true
                             }}
                             placeholder={data.absence_date}
                           ></Input>
@@ -342,7 +353,7 @@ export const RecruitTable = () => {
                                   : e.target.value === '不許可'
                                   ? false
                                   : null
-                              console.log(data.absence_status)
+                              flg = true
                             }}
                           >
                             <option
@@ -401,6 +412,7 @@ export const RecruitTable = () => {
                                   : e.target.value === '不合格'
                                   ? false
                                   : null
+                              flg = true
                             }}
                           >
                             <option
