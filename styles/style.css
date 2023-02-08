@@ -70,9 +70,9 @@ html {
   flex-direction: column;
   justify-content: center;
   width: 80%;
-  max-width: 1000px;
+  max-width: 700px;
   aspect-ratio: 6/2;
-  padding: 3% 7%;
+  padding: 2% 5%;
   border-radius: 15px;
   border: #ffb800 3px solid;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.542);
