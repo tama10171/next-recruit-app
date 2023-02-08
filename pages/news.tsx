@@ -13,7 +13,7 @@ export default function news() {
           borderRadius={'20px'}
           w={{ base: '95%', md: '80%' }}
           background={'#fff'}
-          m={'0 auto'}
+          m={'0 auto 200px auto'}
           p={'3% 5% 5%'}
           border={'#ffb800 3px solid'}
         >
