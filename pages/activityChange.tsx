@@ -1,10 +1,11 @@
 import { PageLayout } from '@/components/layouts/PageLayout'
-import { Center, SimpleGrid } from '@chakra-ui/react'
+import { Box, Center, SimpleGrid } from '@chakra-ui/react'
 import { RecruitTable } from '@/components/pages/recruit/recruitTable'
 const MainPage = () => {
   return (
     <PageLayout>
-        <RecruitTable/>
+      <RecruitTable />
+      <Box h={200} w={'100vw'}></Box>
     </PageLayout>
   )
 }
