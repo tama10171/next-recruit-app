@@ -25,22 +25,26 @@ export default function NewsAdd() {
   const [contents, setContents] = useState<String>()
 
   const newsData = async () => {
-    const updates = {
-      created_at: new Date().toLocaleDateString(),
-      subtitle: title,
-      description: contents,
-    }
+    if (title != '' && contents != '') {
+      const updates = {
+        created_at: new Date().toLocaleDateString(),
+        subtitle: title,
+        description: contents,
+      }
 
-    let { data, error } = await supabase.from('news').insert([updates])
+      let { data, error } = await supabase.from('news').insert([updates])
 
-    if (error == null) {
-      alert('追加成功！')
+      if (error == null) {
+        alert('追加成功！')
+      } else {
+        alert('追加失敗\n\n「タイトル 内容」を入力してください')
+      }
+
+      console.log(data)
+      if (error) console.log(error)
     } else {
       alert('追加失敗\n\n「タイトル 内容」を入力してください')
     }
-
-    console.log(data)
-    if (error) console.log(error)
   }
 
   return (
