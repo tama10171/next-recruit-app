@@ -118,7 +118,7 @@ export const RecruitTable = () => {
             console.log(data)
             console.log(error)
             if (error == null) {
-              log = '活動登録内容を変更しました\n'
+              log = '登録内容を変更しました\n'
             } else {
               log = '通番：' + td.serial_number + ' の更新失敗\n'
             }

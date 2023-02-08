@@ -35,7 +35,7 @@ export default function NewsAdd() {
       let { data, error } = await supabase.from('news').insert([updates])
 
       if (error == null) {
-        alert('追加成功！')
+        alert('新しいグッドJOB INFOを追加しました')
       } else {
         alert('追加失敗\n\n「タイトル 内容」を入力してください')
       }
