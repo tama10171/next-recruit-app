@@ -38,15 +38,16 @@ export const RecruitTable = () => {
   const [code, setCode] = useState<number>(0)
   const [name, setName] = useState('')
   const [result, setResult] = useState<Boolean | null>()
-  const [acceptance_date, setAcceptance_date] = useState<String>()
+  const [acceptance_date, setAcceptance_date] = useState<String | null>()
   // const [acceptance_date, setAcceptance_date] = useState<Date>()
   const [content, setContent] = useState('')
   const [place, setPlace] = useState('')
-  const [Implementation_date, setImplementation_date] = useState('')
-  const [absence_date, setAbsence_data] = useState('')
+  const [Implementation_date, setImplementation_date] = useState<String | null>()
+  const [absence_date, setAbsence_data] = useState<String | null>()
   const [absence_status, setAbsence_status] = useState<Boolean | null>()
   const [intermediate_result, setIntermediate_result] = useState<Boolean | null>()
 
+  let flg = false
   let count = 1
 
   const tableData = async () => {
@@ -79,8 +80,8 @@ export const RecruitTable = () => {
       console.log(data)
       if (error) console.log(error)
       setTable(data)
-      // if (table) setSerial_number(5)
     }
+    flg = false
     console.log(serial_number)
   }
 
@@ -90,39 +91,41 @@ export const RecruitTable = () => {
 
   const upDate = async () => {
     // 更新
-    if (table) {
-      let log = ''
-      const postData = await Promise.all(
-        table.map(async (td: any, index) => {
-          let { data, error } = await supabase
-            .from('companyinfo')
-            .update({
-              // serial_number: td.serial_number,
-              // user_id: user_id,
-              code: td.code,
-              name: td.name,
-              result: td.result,
-              acceptance_date: td.acceptance_date,
-              content: td.content,
-              place: td.place,
-              Implementation_date: td.Implementation_date,
-              absence_date: td.absence_date,
-              absence_status: td.absence_status,
-              intermediate_result: td.intermediate_result,
-            })
-            .eq('user_id', user_id)
-            .eq('serial_number', index + 1)
-          console.log(data)
-          console.log(error)
-          if (error == null) {
-            log += '通番：' + td.serial_number + ' の更新成功！\n'
-          } else {
-            log += '通番：' + td.serial_number + ' の更新失敗\n'
-          }
-        })
-      )
-      if (log != '') {
-        alert(log)
+    if (flg) {
+      if (table) {
+        let log = ''
+        const postData = await Promise.all(
+          table.map(async (td: any, index) => {
+            let { data, error } = await supabase
+              .from('companyinfo')
+              .update({
+                // serial_number: td.serial_number,
+                // user_id: user_id,
+                code: td.code,
+                name: td.name,
+                result: td.result,
+                acceptance_date: td.acceptance_date,
+                content: td.content,
+                place: td.place,
+                Implementation_date: td.Implementation_date,
+                absence_date: td.absence_date,
+                absence_status: td.absence_status,
+                intermediate_result: td.intermediate_result,
+              })
+              .eq('user_id', user_id)
+              .eq('serial_number', index + 1)
+            console.log(data)
+            console.log(error)
+            if (error == null) {
+              log += '通番：' + td.serial_number + ' の更新成功！\n'
+            } else {
+              log += '通番：' + td.serial_number + ' の更新失敗\n'
+            }
+          })
+        )
+        if (log != '') {
+          alert(log)
+        }
       }
     }
 
@@ -135,8 +138,8 @@ export const RecruitTable = () => {
       // acceptance_date == null ||
       content == '' ||
       place == '' ||
-      Implementation_date == null ||
-      absence_date == null
+      Implementation_date == null
+      // || absence_date == null
     ) {
       console.log('not insert')
     } else {
@@ -164,8 +167,8 @@ export const RecruitTable = () => {
       } else {
         alert('追加失敗\n\n日付を正しく入力してください')
       }
-      tableData()
     }
+    tableData()
   }
 
   return (
@@ -244,6 +247,7 @@ export const RecruitTable = () => {
                             min={0}
                             onChange={(e) => {
                               data.code = parseInt(e.valueOf())
+                              flg = true
                             }}
                           >
                             <NumberInputField />
@@ -257,6 +261,7 @@ export const RecruitTable = () => {
                           <Input
                             onChange={(e) => {
                               data.name = e.target.value
+                              flg = true
                             }}
                             placeholder={data.name}
                           ></Input>
@@ -270,6 +275,7 @@ export const RecruitTable = () => {
                                   : e.target.value === '不合格'
                                   ? false
                                   : null
+                              flg = true
                             }}
                           >
                             <option
@@ -298,15 +304,17 @@ export const RecruitTable = () => {
                         <Td>
                           <Input
                             onChange={(e) => {
-                              data.acceptance_date = e.target.value
+                              data.acceptance_date = e.target.value != '' ? e.target.value : null
+                              flg = true
                             }}
-                            placeholder={data.acceptance_date}
+                            placeholder={data.acceptance_date == null ? '' : data.acceptance_date}
                           ></Input>
                         </Td>
                         <Td>
                           <Input
                             onChange={(e) => {
                               data.content = e.target.value
+                              flg = true
                             }}
                             placeholder={data.content}
                           ></Input>
@@ -315,6 +323,7 @@ export const RecruitTable = () => {
                           <Input
                             onChange={(e) => {
                               data.place = e.target.value
+                              flg = true
                             }}
                             placeholder={data.place}
                           ></Input>
@@ -322,7 +331,9 @@ export const RecruitTable = () => {
                         <Td>
                           <Input
                             onChange={(e) => {
-                              data.Implementation_date = e.target.value
+                              data.Implementation_date =
+                                e.target.value != '' ? e.target.value : null
+                              flg = true
                             }}
                             placeholder={data.Implementation_date}
                           ></Input>
@@ -330,7 +341,8 @@ export const RecruitTable = () => {
                         <Td>
                           <Input
                             onChange={(e) => {
-                              data.absence_date = e.target.value
+                              data.absence_date = e.target.value != '' ? e.target.value : null
+                              flg = true
                             }}
                             placeholder={data.absence_date}
                           ></Input>
@@ -344,7 +356,7 @@ export const RecruitTable = () => {
                                   : e.target.value === '不許可'
                                   ? false
                                   : null
-                              console.log(data.absence_status)
+                              flg = true
                             }}
                           >
                             <option
@@ -403,6 +415,7 @@ export const RecruitTable = () => {
                                   : e.target.value === '不合格'
                                   ? false
                                   : null
+                              flg = true
                             }}
                           >
                             <option
@@ -544,7 +557,7 @@ export const RecruitTable = () => {
                     <Td>
                       <Input
                         onChange={(e) => {
-                          setAcceptance_date(e.target.value)
+                          setAcceptance_date(e.target.value != '' ? e.target.value : null)
                         }}
                         placeholder="例：2023-01-01"
                       ></Input>
@@ -568,7 +581,7 @@ export const RecruitTable = () => {
                     <Td>
                       <Input
                         onChange={(e) => {
-                          setImplementation_date(e.target.value)
+                          setImplementation_date(e.target.value != '' ? e.target.value : null)
                         }}
                         placeholder="例：2023-01-31"
                       ></Input>
@@ -576,7 +589,7 @@ export const RecruitTable = () => {
                     <Td>
                       <Input
                         onChange={(e) => {
-                          setAbsence_data(e.target.value)
+                          setAbsence_data(e.target.value != '' ? e.target.value : null)
                         }}
                         placeholder="例：2023-12-31"
                       ></Input>
