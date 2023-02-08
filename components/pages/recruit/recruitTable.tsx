@@ -209,7 +209,7 @@ export const RecruitTable = () => {
                     <Th fontSize={13} color={'#FF9900'}>
                       企業コード
                     </Th>
-                    <Th fontSize={13} color={'#FF9900'}>
+                    <Th fontSize={13} color={'#FF9900'} minW={150}>
                       企業名
                     </Th>
                     <Th fontSize={13} color={'#FF9900'}>
@@ -218,10 +218,10 @@ export const RecruitTable = () => {
                     <Th fontSize={13} color={'#FF9900'}>
                       内定承諾提出日
                     </Th>
-                    <Th fontSize={13} color={'#FF9900'}>
+                    <Th fontSize={13} color={'#FF9900'} minW={150}>
                       活動内容
                     </Th>
-                    <Th fontSize={13} color={'#FF9900'}>
+                    <Th fontSize={13} color={'#FF9900'} minW={150}>
                       場所
                     </Th>
                     <Th fontSize={13} color={'#FF9900'}>
@@ -233,7 +233,7 @@ export const RecruitTable = () => {
                     <Th fontSize={13} color={'#FF9900'}>
                       公欠状態
                     </Th>
-                    <Th fontSize={13} color={'#FF9900'}>
+                    <Th fontSize={13} color={'#FF9900'} minW={85}>
                       結果
                     </Th>
                   </Tr>
